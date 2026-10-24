@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Section 1: Problem / The Gap (We Know How This Feels)
+   ========================================================================== */
+
+.gap-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 44px;
+  background-color: #bebfca;
+  background: linear-gradient(180deg, #c6c9ce 0%, #b8bbc1 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.gap-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.gap-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #3e4147;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.gap-main-headline {
+  font-family: var(--font-hero, sans-serif);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #0f1012;
+  margin-bottom: 30px;
+}
+
+.gap-narrative-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 36px 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.gap-lead-text {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.6;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.gap-emphasis-banner {
+  display: inline-block;
+  background: #111111;
+  color: #ffffff;
+  padding: 6px 14px;
+  font-family: var(--font-hero, sans-serif);
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  margin: 12px 0 20px;
+}
+
+.gap-explanation-text {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #2b2b2b;
+  max-width: 900px;
+}
+
+/* Comparison Grid: College vs Company */
+.gap-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.gap-card {
+  background: #e8eaee;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 28px 24px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gap-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.gap-card-number {
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.gap-card-title {
+  font-family: var(--font-hero, sans-serif);
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.gap-card-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #383838;
+}
+
+/* Bottom Callout */
+.gap-bottom-badge {
+  margin-top: 40px;
+  background: #111111;
+  color: #ffffff;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gap-badge-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.gap-badge-btn {
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  font-family: var(--font-body, sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gap-badge-btn:hover {
+  background: #dedede;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .gap-section {
+    padding: 70px 24px;
+  }
+
+  .gap-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .gap-narrative-card {
+    padding: 24px 20px;
+  }
+}

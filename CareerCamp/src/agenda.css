@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Section 3: What You'll Get (Your Day at a Glance)
+   ========================================================================== */
+
+.agenda-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 44px;
+  background-color: #cacdd3;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.agenda-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.agenda-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #3e4147;
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.agenda-headline {
+  font-family: var(--font-hero, sans-serif);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #0f1012;
+  margin-bottom: 20px;
+}
+
+.agenda-subtext {
+  font-size: 16px;
+  color: #333;
+  max-width: 650px;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+/* Agenda Schedule Table */
+.agenda-table-wrap {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.agenda-table-header {
+  display: grid;
+  grid-template-columns: 80px 1.2fr 2fr;
+  padding: 18px 24px;
+  background: #111111;
+  color: #ffffff;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.agenda-row {
+  display: grid;
+  grid-template-columns: 80px 1.2fr 2fr;
+  padding: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.agenda-row:last-child {
+  border-bottom: none;
+}
+
+.agenda-row:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.agenda-index {
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 700;
+  color: #666;
+}
+
+.agenda-session-title {
+  font-family: var(--font-hero, sans-serif);
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  color: #111;
+  padding-right: 20px;
+}
+
+.agenda-takeaway {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #2b2b2b;
+}
+
+/* Plus Perks Bar */
+.agenda-perks-wrap {
+  margin-top: 36px;
+  background: #1c1d21;
+  color: #ffffff;
+  padding: 32px 36px;
+  border: 1px solid #2d2e35;
+}
+
+.agenda-perks-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #999;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.agenda-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.agenda-perk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.agenda-perk-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.agenda-perk-text {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .agenda-section {
+    padding: 70px 24px;
+  }
+
+  .agenda-table-header {
+    display: none;
+  }
+
+  .agenda-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 18px;
+  }
+
+  .agenda-perks-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

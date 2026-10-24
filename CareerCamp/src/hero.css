@@ -1,8 +1,7 @@
 /* ==========================================================================
-   Hero Section Styling - Daemon AI Agency
+   Hero Section Styling - GenLab Launchpad
    ========================================================================== */
 
-/* Base Page / Hero Container */
 .daemon-page {
   position: relative;
   width: 100%;
@@ -14,9 +13,7 @@
   background-color: #c6c9ce;
 }
 
-/* --------------------------------------------------------------------------
-   Atmospheric Background Layers
-   -------------------------------------------------------------------------- */
+/* Atmospheric Background Layers */
 .daemon-bg-layer {
   position: fixed;
   inset: 0;
@@ -57,11 +54,9 @@
   pointer-events: none;
 }
 
-/* --------------------------------------------------------------------------
-   Technical Architectural Grid Overlay & Crosshairs
-   -------------------------------------------------------------------------- */
+/* Technical Grid Overlay */
 .daemon-grid-layer {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 4;
   pointer-events: none;
@@ -72,7 +67,7 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  background-color: var(--color-grid, rgba(0, 0, 0, 0.08));
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .grid-line-horizontal {
@@ -80,7 +75,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--color-grid, rgba(0, 0, 0, 0.08));
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .grid-cross {
@@ -89,14 +84,12 @@
   font-family: var(--font-mono, 'IBM Plex Mono', monospace);
   font-size: 14px;
   font-weight: 300;
-  color: var(--color-grid-marker, rgba(0, 0, 0, 0.35));
+  color: rgba(0, 0, 0, 0.35);
   user-select: none;
   line-height: 1;
 }
 
-/* --------------------------------------------------------------------------
-   Main Content Layout
-   -------------------------------------------------------------------------- */
+/* Content Wrapper */
 .daemon-content-wrapper {
   position: relative;
   z-index: 10;
@@ -105,7 +98,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 34px 44px;
+  padding: 30px 44px 20px;
 }
 
 /* Header */
@@ -125,14 +118,8 @@
   text-decoration: none;
   color: var(--color-black, #0d0d0d);
   cursor: pointer;
-  transition: opacity 0.2s ease;
 }
 
-.daemon-brand:hover {
-  opacity: 0.75;
-}
-
-/* 3x3 Pixel Diamond Logo */
 .daemon-logo-icon {
   width: 22px;
   height: 22px;
@@ -145,7 +132,7 @@
 .daemon-logo-pixel {
   width: 5px;
   height: 5px;
-  background-color: var(--color-black, #0d0d0d);
+  background-color: #0d0d0d;
 }
 
 .daemon-logo-pixel.dim {
@@ -154,7 +141,7 @@
 
 .daemon-brand-text {
   font-family: var(--font-hero, 'Anton', sans-serif);
-  font-size: 24px;
+  font-size: 22px;
   letter-spacing: -0.01em;
   line-height: 1;
   display: flex;
@@ -162,15 +149,14 @@
 }
 
 .daemon-brand-text sup {
-  font-size: 11px;
+  font-size: 10px;
   font-family: var(--font-body, 'Inter', sans-serif);
   font-weight: 600;
   margin-left: 2px;
   position: relative;
-  top: -6px;
+  top: -5px;
 }
 
-/* Hamburger Toggle Button */
 .daemon-menu-btn {
   background: transparent;
   border: none;
@@ -192,120 +178,193 @@
   display: block;
   width: 26px;
   height: 2.5px;
-  background-color: var(--color-black, #0d0d0d);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #0d0d0d;
 }
 
-/* --------------------------------------------------------------------------
-   Hero Headline & Sidebar
-   -------------------------------------------------------------------------- */
+/* Hero Section */
 .daemon-hero {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px 0;
-  gap: 30px;
+  padding: 30px 0;
+  gap: 40px;
 }
 
 .daemon-hero-title-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 16px;
 }
 
+/* Event Strip Tag */
+.hero-event-strip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono, monospace);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #1e1e1e;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 14px;
+  width: fit-content;
+  letter-spacing: 0.04em;
+}
+
+.hero-strip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-strip-divider {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* Headlines */
 .daemon-hero-headline {
   font-family: var(--font-hero, 'Anton', sans-serif);
-  font-size: clamp(4.5rem, 11vw, 12rem);
-  line-height: 0.88;
-  letter-spacing: -0.025em;
+  font-size: clamp(3.2rem, 6.5vw, 6.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #101010;
   user-select: none;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .daemon-hero-headline span {
   display: block;
 }
 
-/* Right-side Features & CTA */
+/* Sub-headline */
+.hero-subheadline {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #242424;
+  font-weight: 400;
+  max-width: 580px;
+}
+
+.hero-subheadline strong {
+  font-weight: 600;
+  color: #000;
+}
+
+/* CTA Wrap */
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.hero-primary-btn {
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #000000;
+  font-family: var(--font-body, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.hero-primary-btn:hover {
+  background: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-cta-subtext {
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  color: #4a4a4a;
+  letter-spacing: 0.05em;
+}
+
+/* Right-side Column */
 .daemon-hero-sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 32px;
-  padding-left: 20px;
-  max-width: 280px;
+  gap: 28px;
+  padding-left: 30px;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #555;
+  font-weight: 600;
 }
 
 .daemon-services-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .daemon-service-item {
-  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-body, sans-serif);
+  font-size: 14.5px;
+  font-weight: 600;
   color: #1e1e1e;
-  cursor: pointer;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.2s ease, transform 0.2s ease;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
+  cursor: default;
 }
 
-.daemon-service-item:hover {
-  color: #000;
-  transform: translateX(4px);
+.daemon-service-bullet {
+  font-family: var(--font-mono, monospace);
+  color: #666;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.daemon-service-item::before {
-  content: '';
-  width: 3px;
-  height: 3px;
-  background-color: currentColor;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.daemon-service-item:hover::before {
-  opacity: 1;
-}
-
-/* "How It Works" Technical Badge Button */
+/* "How It Works" Card Button */
 .daemon-how-btn {
   position: relative;
   background-color: #181818;
   color: #ffffff;
   border: 1px solid #2e2e2e;
-  padding: 14px 22px;
+  padding: 13px 20px;
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: visible;
 }
 
 .daemon-how-btn:hover {
   background-color: #050505;
-  border-color: #444;
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
 }
 
 .daemon-how-btn .corner-icon {
@@ -317,56 +376,44 @@
   user-select: none;
 }
 
-.corner-tl {
-  top: 4px;
-  left: 5px;
-}
+.corner-tl { top: 3px; left: 5px; }
+.corner-tr { top: 3px; right: 5px; }
+.corner-bl { bottom: 3px; left: 5px; }
+.corner-br { bottom: 3px; right: 5px; }
 
-.corner-tr {
-  top: 4px;
-  right: 5px;
-}
-
-.corner-bl {
-  bottom: 4px;
-  left: 5px;
-}
-
-.corner-br {
-  bottom: 4px;
-  right: 5px;
-}
-
-/* --------------------------------------------------------------------------
-   Footer Text
-   -------------------------------------------------------------------------- */
+/* Footer */
 .daemon-footer {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
-  padding-bottom: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.daemon-footer-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 0.1em;
 }
 
 .daemon-footer-text {
-  max-width: 440px;
-  font-size: 14.5px;
-  line-height: 1.55;
-  font-weight: 400;
-  color: #242424;
-  letter-spacing: -0.01em;
+  max-width: 520px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #333;
 }
 
-/* --------------------------------------------------------------------------
-   Floating Navigation Modal / Drawer
-   -------------------------------------------------------------------------- */
+/* Floating Navigation Modal / Drawer */
 .daemon-nav-modal {
   position: fixed;
   top: 30px;
   right: 44px;
   z-index: 100;
-  width: 270px;
+  width: 280px;
   background: linear-gradient(135deg, #ffffff 0%, #e2e2e2 160%);
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -398,7 +445,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 18px 20px 16px;
+  padding: 16px 18px;
   flex: 1;
 }
 
@@ -406,38 +453,39 @@
   background: transparent;
   border: none;
   border-left: 1px solid rgba(0, 0, 0, 0.12);
-  width: 58px;
+  width: 52px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black, #0d0d0d);
+  color: #0d0d0d;
   transition: background-color 0.2s ease;
 }
 
 .daemon-nav-close-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 .daemon-nav-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 16px 20px;
-  gap: 14px;
+  padding: 14px 18px;
+  gap: 10px;
 }
 
 .daemon-nav-link-item a {
   font-family: var(--font-mono, 'IBM Plex Mono', monospace);
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-black, #0d0d0d);
+  color: #0d0d0d;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 8px;
+  padding: 4px 0;
   transition: color 0.18s ease, transform 0.18s ease;
 }
 
@@ -446,16 +494,12 @@
   transform: translateX(4px);
 }
 
-.daemon-nav-link-item a.active {
-  font-weight: 700;
-}
-
-/* Nav Socials Grid */
+/* Nav Socials */
 .daemon-nav-socials {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  height: 54px;
+  height: 50px;
 }
 
 .daemon-social-btn {
@@ -478,115 +522,75 @@
 .daemon-social-btn:hover {
   background-color: rgba(0, 0, 0, 0.08);
   color: #000;
-  transform: translateY(-1px);
 }
 
 .daemon-social-btn svg {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
 }
 
-/* Backdrop for dialog / modal */
+/* Modal Backdrop */
 .daemon-nav-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 95;
-  background: rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(1px);
+  z-index: 120;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
   animation: fadeIn 0.2s ease;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Framer Badge */
-.framer-badge {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 50;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #ffffff;
-  color: #111;
-  padding: 7px 12px;
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-  font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.framer-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-}
-
-/* --------------------------------------------------------------------------
-   Responsive Media Queries
-   -------------------------------------------------------------------------- */
+/* Responsive */
 @media (max-width: 1024px) {
   .daemon-content-wrapper {
-    padding: 24px 28px;
+    padding: 24px 24px;
   }
 
   .daemon-hero {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .daemon-hero-sidebar {
     padding-left: 0;
-    max-width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .daemon-nav-modal {
-    right: 28px;
-    top: 24px;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 24px;
   }
 
   .daemon-footer {
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }
 
 @media (max-width: 640px) {
   .daemon-content-wrapper {
-    padding: 20px 18px;
+    padding: 18px 16px;
   }
 
   .daemon-hero-headline {
-    font-size: 17vw;
+    font-size: clamp(2.4rem, 11vw, 3.8rem);
+  }
+
+  .hero-event-strip {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .hero-primary-btn {
+    width: 100%;
   }
 
   .daemon-nav-modal {
-    right: 18px;
-    top: 18px;
-    width: calc(100% - 36px);
-  }
-
-  .daemon-footer-text {
-    font-size: 13px;
-  }
-
-  .framer-badge {
-    bottom: 12px;
-    right: 12px;
-    padding: 5px 10px;
-    font-size: 11px;
+    right: 16px;
+    top: 16px;
+    width: calc(100% - 32px);
   }
 }

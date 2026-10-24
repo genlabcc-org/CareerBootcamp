@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Registration Modal Styling
+   ========================================================================== */
+
+.reg-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.2s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.reg-modal-card {
+  background: #191a1e;
+  border: 1px solid #333640;
+  color: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+  animation: modalZoomIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalZoomIn {
+  from {
+    transform: scale(0.95) translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.reg-modal-header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid #282a32;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.reg-modal-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #888;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.reg-modal-title {
+  font-family: var(--font-hero, sans-serif);
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.reg-modal-close {
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease;
+}
+
+.reg-modal-close:hover {
+  color: #ffffff;
+}
+
+.reg-modal-body {
+  padding: 24px 28px;
+}
+
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reg-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reg-field-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: #bbb;
+  text-transform: uppercase;
+}
+
+.reg-field-input,
+.reg-field-select {
+  background: #111215;
+  border: 1px solid #333642;
+  color: #ffffff;
+  padding: 12px 14px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.reg-field-input:focus,
+.reg-field-select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 1px #60a5fa;
+}
+
+.reg-submit-btn {
+  margin-top: 10px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 14px 20px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.reg-submit-btn:hover {
+  background: #dedede;
+}
+
+/* Success Card */
+.reg-success-box {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.reg-success-icon {
+  font-size: 40px;
+  margin-bottom: 14px;
+}
+
+.reg-success-title {
+  font-family: var(--font-hero, sans-serif);
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.reg-success-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #b0b0b0;
+  margin-bottom: 24px;
+}
+
+.reg-ticket-badge {
+  background: #23252d;
+  border: 1px dashed #444855;
+  padding: 14px;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  color: #4ade80;
+  margin-bottom: 24px;
+}

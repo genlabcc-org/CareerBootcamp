@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Section 4: This Day Is For You If... (Target Audience)
+   ========================================================================== */
+
+.audience-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 44px;
+  background-color: #17181c;
+  color: #ffffff;
+  border-top: 1px solid #282930;
+  border-bottom: 1px solid #282930;
+  overflow: hidden;
+}
+
+.audience-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.audience-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.audience-headline {
+  font-family: var(--font-hero, sans-serif);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.audience-subtext {
+  font-size: 16px;
+  color: #a0a0a0;
+  max-width: 600px;
+  margin-bottom: 44px;
+  line-height: 1.5;
+}
+
+/* Grid of Audience Cards */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.audience-card {
+  background: #202227;
+  border: 1px solid #31333a;
+  padding: 28px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.audience-card:hover {
+  background: #282a32;
+  border-color: #555866;
+  transform: translateX(4px);
+}
+
+.audience-card-marker {
+  width: 28px;
+  height: 28px;
+  background: #2c2e37;
+  border: 1px solid #454854;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.audience-card-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #d6d6d6;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .audience-section {
+    padding: 70px 24px;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+}
