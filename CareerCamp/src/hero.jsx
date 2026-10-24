@@ -2,30 +2,25 @@ import React, { useState, useEffect, useRef } from 'react';
 import './hero.css';
 
 /**
- * GenLab 3x3 Pixel Diamond Logo Mark
+ * GenLab Official Website Logo
  */
-export function DaemonLogo({ size = 20, color = '#111' }) {
+export function WebsiteLogo({ size = 32 }) {
   return (
-    <div
-      className="daemon-logo-icon"
+    <img
+      src="/logo-white-background.svg"
+      alt="GenLab Logo"
+      className="daemon-logo-img"
       style={{
         width: `${size}px`,
         height: `${size}px`,
+        objectFit: 'contain',
+        display: 'block',
       }}
-      aria-hidden="true"
-    >
-      <div className="daemon-logo-pixel" style={{ backgroundColor: color }} />
-      <div className="daemon-logo-pixel" style={{ backgroundColor: color }} />
-      <div className="daemon-logo-pixel" style={{ backgroundColor: color }} />
-      <div className="daemon-logo-pixel" style={{ backgroundColor: color }} />
-      <div className="daemon-logo-pixel dim" style={{ backgroundColor: color }} />
-      <div className="daemon-logo-pixel" style={{ backgroundColor: color }} />
-      <div className="daemon-logo-pixel" style={{ backgroundColor: color }} />
-      <div className="daemon-logo-pixel" style={{ backgroundColor: color }} />
-      <div className="daemon-logo-pixel" style={{ backgroundColor: color }} />
-    </div>
+    />
   );
 }
+
+export const DaemonLogo = WebsiteLogo;
 
 /**
  * Hero Component for GenLab Launchpad
@@ -135,7 +130,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <DaemonLogo size={22} color="#0f0f0f" />
+            <DaemonLogo size={32} />
             <span className="daemon-brand-text">
               GenLab LaunchPad<sup>®</sup>
             </span>
@@ -208,10 +203,59 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
             </div>
           </div>
 
-          {/* Right Column Services & Reality Check points */}
+          {/* Right Column Services & Event Poster */}
           <div className="daemon-hero-sidebar">
-            <span className="sidebar-title">THE HARSH REALITY //</span>
+            {/* Event Poster Showcase */}
+            <div
+              className="hero-poster-frame"
+              onClick={onOpenPoster}
+              title="Click to expand event poster"
+            >
+              <div className="poster-frame-header">
+                <span className="poster-frame-tag">OFFICIAL POSTER // OCT 31</span>
+                <span className="poster-zoom-btn">🔍 Click to Expand</span>
+              </div>
+              <div className="poster-frame-img-box">
+                <img
+                  src="/images/PosterBoot.png"
+                  alt="GenLab Launchpad Official Event Poster"
+                  className="hero-poster-img"
+                  loading="eager"
+                />
+                <div className="poster-frame-hover-hint">
+                  <span>Click to view full poster</span>
+                </div>
+              </div>
+            </div>
 
+            <div className="hero-sidebar-actions">
+              <button
+                type="button"
+                className="daemon-how-btn"
+                onClick={onOpenPoster}
+              >
+                <span className="corner-icon corner-tl" aria-hidden="true">⌖</span>
+                <span className="corner-icon corner-tr" aria-hidden="true">⌖</span>
+                <span>View Full Poster</span>
+                <span className="corner-icon corner-bl" aria-hidden="true">⌖</span>
+                <span className="corner-icon corner-br" aria-hidden="true">⌖</span>
+              </button>
+
+              <button
+                type="button"
+                className="daemon-how-btn"
+                style={{ backgroundColor: '#2b2b2b' }}
+                onClick={() => setHowModalOpen(true)}
+              >
+                <span className="corner-icon corner-tl" aria-hidden="true">⊘</span>
+                <span className="corner-icon corner-tr" aria-hidden="true">⊘</span>
+                <span>How It Works</span>
+                <span className="corner-icon corner-bl" aria-hidden="true">⊘</span>
+                <span className="corner-icon corner-br" aria-hidden="true">⊘</span>
+              </button>
+            </div>
+
+            {/* The Harsh Reality Points */}
             <ul className="daemon-services-list">
               <li className="daemon-service-item">
                 <span className="daemon-service-bullet">01/</span>
@@ -230,33 +274,6 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
                 <span>AI Is Here. Are You Ready For It?</span>
               </li>
             </ul>
-
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-              <button
-                type="button"
-                className="daemon-how-btn"
-                onClick={() => setHowModalOpen(true)}
-              >
-                <span className="corner-icon corner-tl" aria-hidden="true">⊘</span>
-                <span className="corner-icon corner-tr" aria-hidden="true">⊘</span>
-                <span>How It Works</span>
-                <span className="corner-icon corner-bl" aria-hidden="true">⊘</span>
-                <span className="corner-icon corner-br" aria-hidden="true">⊘</span>
-              </button>
-
-              <button
-                type="button"
-                className="daemon-how-btn"
-                style={{ backgroundColor: '#2b2b2b' }}
-                onClick={onOpenPoster}
-              >
-                <span className="corner-icon corner-tl" aria-hidden="true">⌖</span>
-                <span className="corner-icon corner-tr" aria-hidden="true">⌖</span>
-                <span>View Event Poster</span>
-                <span className="corner-icon corner-bl" aria-hidden="true">⌖</span>
-                <span className="corner-icon corner-br" aria-hidden="true">⌖</span>
-              </button>
-            </div>
           </div>
         </section>
 
@@ -281,7 +298,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
         >
           <div className="daemon-nav-header">
             <div className="daemon-nav-header-left">
-              <DaemonLogo size={18} color="#111" />
+              <DaemonLogo size={24} />
               <span className="daemon-brand-text" style={{ fontSize: '18px' }}>
                 GenLab<sup>®</sup>
               </span>

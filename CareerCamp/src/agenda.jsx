@@ -88,7 +88,9 @@ export default function Agenda() {
           <div className="agenda-perks-grid">
             {perks.map((perk, idx) => (
               <div key={idx} className="agenda-perk-item">
-                <span className="agenda-perk-icon" aria-hidden="true">{perk.icon}</span>
+                <span className="agenda-perk-icon" aria-hidden="true">
+                  {perk.icon || '✦'}
+                </span>
                 <span className="agenda-perk-text">{perk.text}</span>
               </div>
             ))}

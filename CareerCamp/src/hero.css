@@ -32,13 +32,11 @@
   position: fixed;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(
-    180deg,
-    rgba(202, 206, 212, 0.92) 0%,
-    rgba(190, 195, 202, 0.72) 40%,
-    rgba(165, 171, 180, 0.35) 75%,
-    rgba(130, 136, 145, 0.5) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(202, 206, 212, 0.92) 0%,
+      rgba(190, 195, 202, 0.72) 40%,
+      rgba(165, 171, 180, 0.35) 75%,
+      rgba(130, 136, 145, 0.5) 100%);
   pointer-events: none;
 }
 
@@ -110,6 +108,17 @@
   text-decoration: none;
   color: var(--color-black, #0d0d0d);
   cursor: pointer;
+}
+
+.daemon-logo-img {
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.daemon-brand:hover .daemon-logo-img {
+  transform: scale(1.05);
 }
 
 .daemon-logo-icon {
@@ -295,17 +304,101 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 28px;
+  gap: 20px;
   padding-left: 30px;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.sidebar-title {
+/* Event Poster Frame Showcase */
+.hero-poster-frame {
+  width: 100%;
+  max-width: 330px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-poster-frame:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+  border-color: rgba(0, 0, 0, 0.28);
+}
+
+.poster-frame-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.poster-frame-tag {
   font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  color: #555;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #222;
+}
+
+.poster-zoom-btn {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  color: #666;
   font-weight: 600;
+}
+
+.poster-frame-img-box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f4f4f4;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hero-poster-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4320 / 5400;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.hero-poster-frame:hover .hero-poster-img {
+  transform: scale(1.02);
+}
+
+.poster-frame-hover-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s ease;
+}
+
+.hero-poster-frame:hover .poster-frame-hover-hint {
+  opacity: 1;
+}
+
+.hero-sidebar-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .daemon-services-list {
@@ -368,10 +461,25 @@
   user-select: none;
 }
 
-.corner-tl { top: 3px; left: 5px; }
-.corner-tr { top: 3px; right: 5px; }
-.corner-bl { bottom: 3px; left: 5px; }
-.corner-br { bottom: 3px; right: 5px; }
+.corner-tl {
+  top: 3px;
+  left: 5px;
+}
+
+.corner-tr {
+  top: 3px;
+  right: 5px;
+}
+
+.corner-bl {
+  bottom: 3px;
+  left: 5px;
+}
+
+.corner-br {
+  bottom: 3px;
+  right: 5px;
+}
 
 /* Footer */
 .daemon-footer {
@@ -420,6 +528,7 @@
     opacity: 0;
     transform: translateY(-10px) scale(0.97);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -533,8 +642,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Responsive */
