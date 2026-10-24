@@ -120,13 +120,13 @@
 .trans-col.after {
   background: #111111;
   color: #ffffff;
-  border-left: 4px solid #22c55e;
+  border-left: 4px solid #c2e600;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
 }
 
 .trans-col.after .trans-col-badge {
-  background: #14532d;
-  color: #4ade80;
+  background: #c2e600;
+  color: black;
 }
 
 .trans-col.after .trans-state-title {
@@ -134,9 +134,9 @@
 }
 
 .trans-col.after .trans-keyword-pill {
-  color: #86efac;
-  background: rgba(20, 83, 45, 0.5);
-  border-color: rgba(74, 222, 128, 0.3);
+  color: black;
+  background: #c2e600;
+  border-color: #c2e600;
 }
 
 .trans-col.after .trans-state-desc {

@@ -59,7 +59,7 @@ export default function WhyJoin() {
               <div>
                 <div className="why-card-header">
                   <span className="why-card-badge">REASON // {item.num}</span>
-                  <span className="why-card-icon" aria-hidden="true">✔</span>
+                  {/* <span className="why-card-icon" aria-hidden="true">✔</span> */}
                 </div>
                 <h3 className="why-card-title">{item.title}</h3>
                 <p className="why-card-desc">{item.desc}</p>

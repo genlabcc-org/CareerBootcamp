@@ -40,14 +40,14 @@ export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
             className={`poster-toggle-tab ${activeTab === 'graphic' ? 'active' : ''}`}
             onClick={() => setActiveTab('graphic')}
           >
-            🖼️ Graphic Poster
+            Graphic Poster
           </button>
           <button
             type="button"
             className={`poster-toggle-tab ${activeTab === 'syllabus' ? 'active' : ''}`}
             onClick={() => setActiveTab('syllabus')}
           >
-            📋 Text Outline
+            Text Outline
           </button>
         </div>
 
@@ -107,16 +107,16 @@ export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
               </ul>
 
               <div className="poster-mantra-highlight">
-                PLUS: THE JOB INTERVIEW MANTRA 🔑
+                PLUS: THE JOB INTERVIEW MANTRA
               </div>
             </div>
 
             {/* Event Details Strip */}
             <div className="poster-strip">
-              <span>📅 31st Oct, Saturday</span>
-              <span>⏰ 10:00 AM</span>
-              <span>📍 GenLab Office</span>
-              <span>💸 100% FREE ENTRY</span>
+              <span>31st Oct, Saturday</span>
+              <span>10:00 AM</span>
+              <span>GenLab Office</span>
+              <span>100% FREE ENTRY</span>
             </div>
 
             {/* Switchable Taglines */}
@@ -151,7 +151,7 @@ export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
             className="poster-print-btn"
             onClick={() => window.print()}
           >
-            🖨️ Print / Save PDF
+            Print / Save PDF
           </button>
 
           <button
@@ -162,7 +162,7 @@ export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
               onOpenRegister();
             }}
           >
-            ⚡ Reserve Seat Now
+            Reserve Seat Now
           </button>
         </div>
       </div>

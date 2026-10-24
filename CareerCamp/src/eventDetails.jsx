@@ -47,7 +47,7 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
 
                 <div className="details-spec-item">
                   <span className="details-spec-label"> ADMISSION</span>
-                  <div className="details-spec-val" style={{ color: '#4ade80' }}>
+                  <div className="details-spec-val" style={{ color: '#c2e600' }}>
                     100% Free (No Tuition or Upsell)
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
                 className="details-poster-trigger"
                 onClick={onOpenPoster}
               >
-                <span>📄 View / Print Official Event Poster</span>
+                <span>View / Print Official Event Poster</span>
               </button>
             </div>
           </div>
