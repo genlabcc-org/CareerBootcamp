@@ -40,15 +40,15 @@ export default function Agenda() {
 
   const perks = [
     {
-      icon: '🎯',
+      
       text: 'Practical tips you can apply to your resume and portfolio the very same evening.',
     },
     {
-      icon: '🤝',
+     
       text: 'A collaborative room packed with driven job seekers and students on the exact same mission.',
     },
     {
-      icon: '💡',
+      
       text: 'Direct 1-on-1 access to industry mentors and unvarnished engineering leadership insights.',
     },
   ];

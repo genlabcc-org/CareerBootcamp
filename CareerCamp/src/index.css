@@ -30,7 +30,7 @@ body,
   height: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #c6c9ce;
+  background-color: #ffffff;
   font-family: var(--font-body);
   color: var(--color-black);
 }

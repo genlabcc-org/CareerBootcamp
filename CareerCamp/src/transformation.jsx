@@ -18,7 +18,7 @@ export default function Transformation() {
             <div>
               <div className="trans-col-header">
                 <span className="trans-col-badge">STATUS // BEFORE</span>
-                <span style={{ fontSize: '18px' }} aria-hidden="true">🌧️</span>
+                <span style={{ fontSize: '18px' }} aria-hidden="true"></span>
               </div>
 
               <h3 className="trans-state-title">THE STUCK CYCLE</h3>
@@ -42,7 +42,7 @@ export default function Transformation() {
             <div>
               <div className="trans-col-header">
                 <span className="trans-col-badge">STATUS // AFTER</span>
-                <span style={{ fontSize: '18px' }} aria-hidden="true">⚡</span>
+                <span style={{ fontSize: '18px' }} aria-hidden="true"></span>
               </div>
 
               <h3 className="trans-state-title">THE PURPOSE CYCLE</h3>

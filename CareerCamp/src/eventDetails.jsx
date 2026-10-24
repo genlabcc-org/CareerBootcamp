@@ -18,21 +18,21 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
             <div>
               <div className="details-specs-list">
                 <div className="details-spec-item">
-                  <span className="details-spec-label">📅 DATE</span>
+                  <span className="details-spec-label"> DATE</span>
                   <div className="details-spec-val">
                     Saturday, 31st October
                   </div>
                 </div>
 
                 <div className="details-spec-item">
-                  <span className="details-spec-label">⏰ TIME</span>
+                  <span className="details-spec-label"> TIME</span>
                   <div className="details-spec-val">
                     10:00 AM Onwards (Full Day Reset)
                   </div>
                 </div>
 
                 <div className="details-spec-item">
-                  <span className="details-spec-label">📍 VENUE</span>
+                  <span className="details-spec-label"> VENUE</span>
                   <div className="details-spec-val">
                     GenLab Tech Campus, Innovation Hub
                     <a
@@ -46,14 +46,14 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
                 </div>
 
                 <div className="details-spec-item">
-                  <span className="details-spec-label">💸 ADMISSION</span>
+                  <span className="details-spec-label"> ADMISSION</span>
                   <div className="details-spec-val" style={{ color: '#4ade80' }}>
                     100% Free (No Tuition or Upsell)
                   </div>
                 </div>
 
                 <div className="details-spec-item">
-                  <span className="details-spec-label">👥 CAPACITY</span>
+                  <span className="details-spec-label"> CAPACITY</span>
                   <div className="details-spec-val">
                     Limited Seats (First-come, first-served)
                   </div>

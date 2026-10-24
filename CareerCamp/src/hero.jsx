@@ -160,13 +160,13 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
           <div className="daemon-hero-title-wrap">
             {/* Event Strip */}
             <div className="hero-event-strip">
-              <span className="hero-strip-item">📅 Saturday, 31st October</span>
+              <span className="hero-strip-item"> Saturday, 31st October</span>
               <span className="hero-strip-divider">|</span>
-              <span className="hero-strip-item">⏰ 10:00 AM</span>
+              <span className="hero-strip-item"> 10:00 AM</span>
               <span className="hero-strip-divider">|</span>
-              <span className="hero-strip-item">📍 GenLab Office</span>
+              <span className="hero-strip-item"> GenLab Office</span>
               <span className="hero-strip-divider">|</span>
-              <span className="hero-strip-item">💸 100% Free</span>
+              <span className="hero-strip-item"> 100% Free</span>
             </div>
 
             {/* Main Bold Headline (Clickable to cycle options) */}
