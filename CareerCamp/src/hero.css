@@ -1,0 +1,592 @@
+/* ==========================================================================
+   Hero Section Styling - Daemon AI Agency
+   ========================================================================== */
+
+/* Base Page / Hero Container */
+.daemon-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #c6c9ce;
+}
+
+/* --------------------------------------------------------------------------
+   Atmospheric Background Layers
+   -------------------------------------------------------------------------- */
+.daemon-bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-image: url('/images/mountain-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  filter: grayscale(100%) contrast(1.12) brightness(0.9);
+  mix-blend-mode: multiply;
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.daemon-vignette-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(202, 206, 212, 0.92) 0%,
+    rgba(190, 195, 202, 0.72) 40%,
+    rgba(165, 171, 180, 0.35) 75%,
+    rgba(130, 136, 145, 0.5) 100%
+  );
+  pointer-events: none;
+}
+
+.daemon-grain-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  background-image: url('/images/noise.png');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Technical Architectural Grid Overlay & Crosshairs
+   -------------------------------------------------------------------------- */
+.daemon-grid-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.grid-line-vertical {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--color-grid, rgba(0, 0, 0, 0.08));
+}
+
+.grid-line-horizontal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-grid, rgba(0, 0, 0, 0.08));
+}
+
+.grid-cross {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-grid-marker, rgba(0, 0, 0, 0.35));
+  user-select: none;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Main Content Layout
+   -------------------------------------------------------------------------- */
+.daemon-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 34px 44px;
+}
+
+/* Header */
+.daemon-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.daemon-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--color-black, #0d0d0d);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.daemon-brand:hover {
+  opacity: 0.75;
+}
+
+/* 3x3 Pixel Diamond Logo */
+.daemon-logo-icon {
+  width: 22px;
+  height: 22px;
+  transform: rotate(45deg);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.daemon-logo-pixel {
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-black, #0d0d0d);
+}
+
+.daemon-logo-pixel.dim {
+  opacity: 0.45;
+}
+
+.daemon-brand-text {
+  font-family: var(--font-hero, 'Anton', sans-serif);
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.daemon-brand-text sup {
+  font-size: 11px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-weight: 600;
+  margin-left: 2px;
+  position: relative;
+  top: -6px;
+}
+
+/* Hamburger Toggle Button */
+.daemon-menu-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  transition: transform 0.2s ease;
+}
+
+.daemon-menu-btn:hover {
+  transform: scale(1.05);
+}
+
+.daemon-menu-line {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  background-color: var(--color-black, #0d0d0d);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Headline & Sidebar
+   -------------------------------------------------------------------------- */
+.daemon-hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 0;
+  gap: 30px;
+}
+
+.daemon-hero-title-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.daemon-hero-headline {
+  font-family: var(--font-hero, 'Anton', sans-serif);
+  font-size: clamp(4.5rem, 11vw, 12rem);
+  line-height: 0.88;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: #101010;
+  user-select: none;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.daemon-hero-headline span {
+  display: block;
+}
+
+/* Right-side Features & CTA */
+.daemon-hero-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  padding-left: 20px;
+  max-width: 280px;
+}
+
+.daemon-services-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.daemon-service-item {
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1e1e1e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.daemon-service-item:hover {
+  color: #000;
+  transform: translateX(4px);
+}
+
+.daemon-service-item::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.daemon-service-item:hover::before {
+  opacity: 1;
+}
+
+/* "How It Works" Technical Badge Button */
+.daemon-how-btn {
+  position: relative;
+  background-color: #181818;
+  color: #ffffff;
+  border: 1px solid #2e2e2e;
+  padding: 14px 22px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible;
+}
+
+.daemon-how-btn:hover {
+  background-color: #050505;
+  border-color: #444;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+.daemon-how-btn .corner-icon {
+  position: absolute;
+  font-size: 10px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  user-select: none;
+}
+
+.corner-tl {
+  top: 4px;
+  left: 5px;
+}
+
+.corner-tr {
+  top: 4px;
+  right: 5px;
+}
+
+.corner-bl {
+  bottom: 4px;
+  left: 5px;
+}
+
+.corner-br {
+  bottom: 4px;
+  right: 5px;
+}
+
+/* --------------------------------------------------------------------------
+   Footer Text
+   -------------------------------------------------------------------------- */
+.daemon-footer {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+}
+
+.daemon-footer-text {
+  max-width: 440px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: #242424;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   Floating Navigation Modal / Drawer
+   -------------------------------------------------------------------------- */
+.daemon-nav-modal {
+  position: fixed;
+  top: 30px;
+  right: 44px;
+  z-index: 100;
+  width: 270px;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e2e2 160%);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.daemon-nav-header {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.daemon-nav-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 20px 16px;
+  flex: 1;
+}
+
+.daemon-nav-close-btn {
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  width: 58px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black, #0d0d0d);
+  transition: background-color 0.2s ease;
+}
+
+.daemon-nav-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.daemon-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px;
+  gap: 14px;
+}
+
+.daemon-nav-link-item a {
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-black, #0d0d0d);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.daemon-nav-link-item a:hover {
+  color: #000;
+  transform: translateX(4px);
+}
+
+.daemon-nav-link-item a.active {
+  font-weight: 700;
+}
+
+/* Nav Socials Grid */
+.daemon-nav-socials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  height: 54px;
+}
+
+.daemon-social-btn {
+  background: transparent;
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.daemon-social-btn:last-child {
+  border-right: none;
+}
+
+.daemon-social-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #000;
+  transform: translateY(-1px);
+}
+
+.daemon-social-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+/* Backdrop for dialog / modal */
+.daemon-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(1px);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Framer Badge */
+.framer-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #111;
+  padding: 7px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.framer-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .daemon-content-wrapper {
+    padding: 24px 28px;
+  }
+
+  .daemon-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .daemon-hero-sidebar {
+    padding-left: 0;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .daemon-nav-modal {
+    right: 28px;
+    top: 24px;
+  }
+
+  .daemon-footer {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .daemon-content-wrapper {
+    padding: 20px 18px;
+  }
+
+  .daemon-hero-headline {
+    font-size: 17vw;
+  }
+
+  .daemon-nav-modal {
+    right: 18px;
+    top: 18px;
+    width: calc(100% - 36px);
+  }
+
+  .daemon-footer-text {
+    font-size: 13px;
+  }
+
+  .framer-badge {
+    bottom: 12px;
+    right: 12px;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
