@@ -1,18 +1,20 @@
 /* ==========================================================================
-   Registration Modal Styling
+   Registration Modal Styling - GenLab Launchpad Theme
    ========================================================================== */
 
 .reg-modal-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 200;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(5px);
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  animation: modalFadeIn 0.2s ease;
+  padding: 16px;
+  animation: modalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
 }
 
 @keyframes modalFadeIn {
@@ -21,20 +23,39 @@
 }
 
 .reg-modal-card {
-  background: #191a1e;
-  border: 1px solid #333640;
-  color: #ffffff;
+  background: #121316;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f3f4f6;
   width: 100%;
-  max-width: 520px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  max-width: 780px;
+  max-height: 92vh;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.04);
   position: relative;
-  overflow: hidden;
-  animation: modalZoomIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  animation: modalZoomIn 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom sleek scrollbar for modal */
+.reg-modal-card::-webkit-scrollbar {
+  width: 7px;
+}
+.reg-modal-card::-webkit-scrollbar-track {
+  background: #0e0f12;
+}
+.reg-modal-card::-webkit-scrollbar-thumb {
+  background: #2b2e38;
+  border-radius: 4px;
+}
+.reg-modal-card::-webkit-scrollbar-thumb:hover {
+  background: #3e4252;
 }
 
 @keyframes modalZoomIn {
   from {
-    transform: scale(0.95) translateY(10px);
+    transform: scale(0.96) translateY(12px);
     opacity: 0;
   }
   to {
@@ -43,145 +64,639 @@
   }
 }
 
+/* Header */
 .reg-modal-header {
-  padding: 24px 28px 18px;
-  border-bottom: 1px solid #282a32;
+  padding: 24px 32px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #15161b;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .reg-modal-tag {
   font-family: var(--font-mono, monospace);
   font-size: 11px;
-  letter-spacing: 0.15em;
-  color: #888;
+  letter-spacing: 0.16em;
+  color: #9aa1b4;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 
 .reg-modal-title {
   font-family: var(--font-hero, sans-serif);
-  font-size: 26px;
-  letter-spacing: 0.02em;
+  font-size: 28px;
+  letter-spacing: 0.03em;
   color: #ffffff;
-  line-height: 1.1;
+  line-height: 1.05;
+  margin: 0;
 }
 
 .reg-modal-close {
-  background: transparent;
-  border: none;
-  color: #888;
-  font-size: 20px;
+  background: #1e2027;
+  border: 1px solid #2e313c;
+  color: #9aa0b0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
   cursor: pointer;
-  padding: 4px 8px;
-  transition: color 0.2s ease;
+  transition: all 0.18s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
 }
 
 .reg-modal-close:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* Body */
+.reg-modal-body {
+  padding: 28px 32px 36px;
+}
+
+.reg-modal-subtitle {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #a4aab8;
+  margin-bottom: 24px;
+}
+
+.reg-modal-subtitle strong {
   color: #ffffff;
 }
 
-.reg-modal-body {
-  padding: 24px 28px;
+/* Duplicate / Global Alert */
+.reg-duplicate-alert {
+  padding: 14px 18px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin-bottom: 22px;
 }
 
+/* Form Layout */
 .reg-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+}
+
+.reg-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
 }
 
 .reg-field-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
+}
+
+.reg-field-group-full {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .reg-field-label {
   font-family: var(--font-mono, monospace);
   font-size: 11.5px;
   letter-spacing: 0.08em;
-  color: #bbb;
+  color: #b0b5c4;
   text-transform: uppercase;
+}
+
+.reg-field-required::after {
+  content: " *";
+  color: #f87171;
 }
 
 .reg-field-input,
 .reg-field-select {
-  background: #111215;
-  border: 1px solid #333642;
+  background: #0b0c0f;
+  border: 1px solid #282a33;
   color: #ffffff;
   padding: 12px 14px;
   font-family: var(--font-body, sans-serif);
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: all 0.18s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reg-field-select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239aa0b0' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 10px;
+  padding-right: 36px;
+}
+
+.reg-field-select option {
+  background: #14151a;
+  color: #ffffff;
+  padding: 10px;
 }
 
 .reg-field-input:focus,
 .reg-field-select:focus {
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 1px #60a5fa;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
+  background: #0f1014;
 }
 
+.reg-field-input.has-error,
+.reg-field-select.has-error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.reg-error-msg {
+  font-size: 12px;
+  color: #fca5a5;
+  margin-top: 2px;
+  font-family: var(--font-mono, monospace);
+}
+
+/* "Others" Typing Sub-Input */
+.reg-other-typing-wrapper {
+  margin-top: 6px;
+  animation: slideDown 0.18s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reg-field-sub-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #14161d;
+  border: 1px solid #3b3f4f;
+  color: #ffffff;
+  font-family: var(--font-body, sans-serif);
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.18s ease;
+  box-sizing: border-box;
+}
+
+.reg-field-sub-input:focus {
+  border-color: #ffffff;
+  background: #191c25;
+}
+
+/* AI Skills Grid & Chips */
+.reg-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+  background: #0b0c0f;
+  border: 1px solid #23252d;
+  padding: 14px;
+}
+
+.reg-skill-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: #c4c8d4;
+  background: #15161b;
+  border: 1px solid #262831;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.reg-skill-chip:hover {
+  border-color: #4a4e5e;
+  color: #ffffff;
+}
+
+.reg-skill-chip.active {
+  background: #232530;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.reg-skill-checkbox {
+  width: 15px;
+  height: 15px;
+  accent-color: #ffffff;
+  cursor: pointer;
+}
+
+/* Consent Box */
+.reg-consent-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: #0c0d10;
+  border: 1px solid #262832;
+  margin-top: 6px;
+}
+
+.reg-consent-checkbox {
+  width: 17px;
+  height: 17px;
+  accent-color: #ffffff;
+  cursor: pointer;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.reg-consent-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a4abb9;
+  cursor: pointer;
+}
+
+/* Submit Button */
 .reg-submit-btn {
-  margin-top: 10px;
+  margin-top: 28px;
   background: #ffffff;
   color: #000000;
   border: none;
-  padding: 14px 20px;
+  padding: 16px 28px;
   font-family: var(--font-body, sans-serif);
   font-size: 15px;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.reg-submit-btn:hover {
-  background: #dedede;
+.reg-submit-btn:hover:not(:disabled) {
+  background: #e2e4e8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
 }
 
-/* Success Card */
-.reg-success-box {
+.reg-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.reg-btn-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reg-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #666;
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: regSpin 0.7s linear infinite;
+}
+
+@keyframes regSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Confirmed Ticket Screen
+   ========================================================================== */
+
+.reg-success-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reg-success-header {
   text-align: center;
-  padding: 30px 10px;
+  padding-bottom: 8px;
 }
 
-.reg-success-icon {
-  font-size: 40px;
-  margin-bottom: 14px;
+.reg-success-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 900;
+  margin: 0 auto 14px;
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
 }
 
-.reg-success-title {
+.reg-success-heading {
   font-family: var(--font-hero, sans-serif);
   font-size: 32px;
+  letter-spacing: 0.04em;
   color: #ffffff;
   margin-bottom: 8px;
 }
 
-.reg-success-desc {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #b0b0b0;
-  margin-bottom: 24px;
+.reg-success-lead {
+  font-size: 14.5px;
+  color: #a4abb9;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
-.reg-ticket-badge {
-  background: #23252d;
-  border: 1px dashed #444855;
-  padding: 14px;
+.reg-success-lead strong {
+  color: #ffffff;
+}
+
+/* High-Contrast Ticket Pass Card */
+.reg-ticket-card {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.reg-ticket-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #000000;
+}
+
+.reg-ticket-brand {
+  display: block;
+  font-family: var(--font-hero, sans-serif);
+  font-size: 22px;
+  letter-spacing: 0.03em;
+  color: #000000;
+  line-height: 1;
+}
+
+.reg-ticket-sub {
+  display: block;
   font-family: var(--font-mono, monospace);
-  font-size: 13px;
-  color: #4ade80;
-  margin-bottom: 24px;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  color: #555555;
+  margin-top: 4px;
 }
 
-.reg-error-note {
-  font-size: 12.5px;
-  color: #f87171;
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.25);
+.reg-ticket-status-pill {
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  letter-spacing: 0.1em;
+}
+
+.reg-ticket-ref-bar {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
   padding: 10px 14px;
-  margin-bottom: 20px;
-  line-height: 1.45;
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reg-ticket-ref-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: #666666;
+  letter-spacing: 0.08em;
+}
+
+.reg-ticket-ref-code {
+  font-family: var(--font-mono, monospace);
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.reg-ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+  padding-bottom: 18px;
+}
+
+.reg-ticket-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.reg-ticket-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: #777777;
+}
+
+.reg-ticket-val {
+  font-family: var(--font-body, sans-serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #000000;
+  word-break: break-word;
+}
+
+/* Tear Line */
+.reg-ticket-tear-line {
+  position: relative;
+  margin: 8px -24px 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.tear-dashed {
+  width: 100%;
+  border-top: 2px dashed #9ca3af;
+}
+
+.tear-circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #121316;
+  border-radius: 50%;
+  top: 0;
+}
+
+.tear-left {
+  left: -10px;
+}
+
+.tear-right {
+  right: -10px;
+}
+
+/* QR Code Section */
+.reg-ticket-qr-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+  padding: 10px 0 6px;
+}
+
+.reg-ticket-qr-canvas {
+  border: 1px solid #000000;
+  background: #ffffff;
+  padding: 6px;
+  width: 180px !important;
+  height: 180px !important;
+}
+
+.reg-ticket-qr-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reg-ticket-qr-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #000000;
+}
+
+.reg-ticket-qr-desc {
+  font-size: 12px;
+  color: #666666;
+  max-width: 380px;
+}
+
+/* Actions Row */
+.reg-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reg-btn-download {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 15px 24px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reg-btn-download:hover:not(:disabled) {
+  background: #dedede;
+  transform: translateY(-1px);
+}
+
+.reg-btn-download:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.reg-success-secondary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.reg-btn-secondary {
+  background: #1a1c22;
+  border: 1px solid #333744;
+  color: #e4e4e7;
+  padding: 13px 18px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+}
+
+.reg-btn-secondary:hover {
+  background: #252832;
+  color: #ffffff;
+  border-color: #555b70;
+}
+
+.reg-btn-secondary.done-btn {
+  background: #22252e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .reg-modal-header {
+    padding: 18px 20px 16px;
+  }
+
+  .reg-modal-body {
+    padding: 20px;
+  }
+
+  .reg-modal-title {
+    font-size: 24px;
+  }
+
+  .reg-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reg-ticket-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reg-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reg-success-secondary-row {
+    grid-template-columns: 1fr;
+  }
 }
