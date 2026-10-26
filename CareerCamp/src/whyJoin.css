@@ -138,10 +138,12 @@
 }
 
 .why-card-desc {
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 14.5px;
-  line-height: 1.6;
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.55;
   color: #d1d1d1;
+  letter-spacing: -0.005em;
 }
 
 /* Feature highlight card */
