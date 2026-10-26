@@ -264,6 +264,19 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
         </section>
       </div>
 
+      {/* Mobile Floating Register CTA: Displayed only on mobile at bottom of screen */}
+      <div className="launchpad-mobile-floating-cta">
+        <button
+          type="button"
+          className="launchpad-mobile-floating-btn"
+          onClick={onOpenRegister}
+          aria-label="Register Now for Launchpad"
+        >
+          <span>Register Now!</span>
+          <span className="launchpad-floating-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+
       {/* 4. Floating Navigation Drawer */}
       {isMenuOpen && (
         <div

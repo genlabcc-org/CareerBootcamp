@@ -529,10 +529,10 @@ export default function RegistrationModal({ isOpen, onClose }) {
                   {isSubmitting ? (
                     <span className="reg-btn-loading">
                       <span className="reg-spinner" />
-                      <span>Processing Registration & Issuing Pass...</span>
+                      <span>Processing Registration...</span>
                     </span>
                   ) : (
-                    <span>Complete Registration & Issue Ticket →</span>
+                    <span>Complete Registration →</span>
                   )}
                 </button>
               </form>
