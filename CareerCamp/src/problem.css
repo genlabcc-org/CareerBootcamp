@@ -137,10 +137,11 @@
 
 /* Headline: each word slides up out of a mask */
 .gap-main-headline {
-  font-family: var(--font-hero, sans-serif);
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  font-weight: 600;
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   text-transform: uppercase;
   color: #0f1012;
   margin-bottom: 30px;
@@ -174,10 +175,11 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 36px 40px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 /* Light sweep across the card once it appears */
@@ -211,11 +213,12 @@
 }
 
 .gap-lead-text {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
   line-height: 1.6;
   color: #1a1a1a;
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 /* Emphasis banner: wipes in left to right, then gets a periodic shine */
@@ -225,11 +228,13 @@
   overflow: hidden;
   background: #111111;
   color: #ffffff;
-  padding: 6px 14px;
-  font-family: var(--font-hero, sans-serif);
-  font-size: 24px;
-  letter-spacing: 0.04em;
-  margin: 12px 0 20px;
+  padding: 10px 20px;
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  letter-spacing: 0.02em;
+  margin: 14px 0 0;
+  border-radius: 4px;
 }
 
 .gap-emphasis-banner::after {
@@ -244,15 +249,10 @@
 }
 
 .anim-ready .gap-emphasis-banner {
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.4s;
+  opacity: 1;
 }
 
-.anim-ready .gap-emphasis-banner.is-visible {
-  clip-path: inset(0 0 0 0);
-}
-
-.anim-ready .gap-emphasis-banner.is-visible::after {
+.gap-emphasis-banner::after {
   animation: gap-shine 4.5s ease-in-out 1.6s infinite;
 }
 
@@ -268,98 +268,9 @@
   }
 }
 
-.gap-explanation-text {
-  font-size: 16px;
-  line-height: 1.65;
-  color: #2b2b2b;
-  max-width: 900px;
-}
-
-/* Pillar cards */
-.gap-comparison-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 36px;
-}
-
-.gap-card {
-  background: #e8eaee;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  padding: 28px 24px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Accent bar that grows on hover */
-.gap-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background: #111;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.gap-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
-}
-
-.gap-card:hover::before {
-  transform: scaleX(1);
-}
-
-/* Keep the reveal transition AND the hover lift working together */
-.anim-ready .gap-card.reveal {
-  transition:
-    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.3s ease;
-  transition-delay: calc(var(--i, 0) * 140ms), calc(var(--i, 0) * 140ms), 0s;
-}
-
-.anim-ready .gap-card.reveal.is-visible:hover {
-  transform: translateY(-6px);
-  transition-delay: 0s;
-}
-
-.gap-card-number {
-  font-family: var(--font-mono, monospace);
-  font-size: 13px;
-  font-weight: 700;
-  color: #555;
-  margin-bottom: 12px;
-  transition: letter-spacing 0.3s ease, color 0.3s ease;
-}
-
-.gap-card:hover .gap-card-number {
-  letter-spacing: 0.08em;
-  color: #111;
-}
-
-.gap-card-title {
-  font-family: var(--font-hero, sans-serif);
-  font-size: 24px;
-  letter-spacing: -0.01em;
-  color: #111;
-  margin-bottom: 10px;
-}
-
-.gap-card-desc {
-  font-size: 14px;
-  line-height: 1.55;
-  color: #383838;
-}
-
 /* Bottom Callout */
 .gap-bottom-badge {
-  margin-top: 40px;
+  margin-top: 10px;
   background: #111111;
   color: #ffffff;
   padding: 20px 28px;
@@ -368,11 +279,14 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
+  border-radius: 6px;
 }
 
 .gap-badge-text {
-  font-size: 16px;
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-size: clamp(14px, 1.3vw, 17px);
   font-weight: 500;
+  letter-spacing: 0.015em;
 }
 
 .gap-badge-btn {

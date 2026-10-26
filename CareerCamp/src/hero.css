@@ -29,18 +29,14 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: radial-gradient(
-      ellipse at 22% 48%,
+  background: radial-gradient(ellipse at 22% 48%,
       rgba(0, 0, 0, 0.22) 0%,
       rgba(10, 16, 11, 0.58) 60%,
-      rgba(8, 13, 9, 0.88) 100%
-    ),
-    linear-gradient(
-      180deg,
+      rgba(8, 13, 9, 0.88) 100%),
+    linear-gradient(180deg,
       rgba(8, 14, 8, 0.4) 0%,
       transparent 35%,
-      rgba(8, 14, 8, 0.85) 100%
-    );
+      rgba(8, 14, 8, 0.85) 100%);
   pointer-events: none;
 }
 
@@ -285,9 +281,11 @@
     align-items: center;
     gap: 40px;
   }
+
   .launchpad-right-col {
     justify-content: center;
   }
+
   .launchpad-statue-img {
     max-width: 460px;
   }
@@ -298,9 +296,11 @@
     flex-wrap: wrap;
     gap: 12px;
   }
+
   .launchpad-detail-divider {
     display: none;
   }
+
   .launchpad-main-title {
     font-size: 3.2rem;
   }
