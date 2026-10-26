@@ -1,7 +1,7 @@
 
-import { supabase, isSupabaseConfigured } from "./supabase";
-import { normalizeEmail, normalizePhone, validateRegistrationForm } from "./validators";
-import { syncRegistrationToSheet, syncAttendanceToSheet } from "./googleSheets";
+import { supabase, isSupabaseConfigured } from "./supabase.js";
+import { normalizeEmail, normalizePhone, validateRegistrationForm } from "./validators.js";
+import { syncRegistrationToSheet, syncAttendanceToSheet } from "./googleSheets.js";
 
 const memoryStore = {};
 function getStore() {
@@ -15,8 +15,10 @@ function getStore() {
   };
 }
 
-// Safe check for test environment vs browser
-const isRunningInTest = typeof window === "undefined" || (typeof process !== "undefined" && Boolean(process.env?.VITEST));
+// Safe check for test environment (e.g. Vitest mock unit tests)
+const isRunningInTest =
+  typeof process !== "undefined" &&
+  (Boolean(process.env?.VITEST) || process.env?.NODE_ENV === "test");
 
 const LOCAL_STORAGE_KEY_REGS = "clp_registrations";
 const LOCAL_STORAGE_KEY_EMAILS = "clp_email_jobs";
@@ -135,6 +137,10 @@ export async function registerParticipant(formData) {
 
     const deptValue = (formData.department || formData.domain || "").trim();
     const domainValue = (formData.domain || formData.department || "").trim();
+    const formattedDomain =
+      deptValue && domainValue && deptValue !== domainValue
+        ? `${domainValue} (${deptValue})`
+        : domainValue || deptValue;
 
     // 2. Direct insert into Supabase PostgreSQL table
     const primaryPayload = {
@@ -146,8 +152,7 @@ export async function registerParticipant(formData) {
       normalized_email: normEmail,
       college_name: (formData.collegeName || "").trim(),
       pass_out_year: parseInt(formData.passOutYear, 10) || formData.passOutYear,
-      department: deptValue,
-      domain: domainValue,
+      domain: formattedDomain,
       ai_skills: formData.aiSkills || [],
       ticket_token_hash: tokenHash,
       email_status: "pending",
@@ -159,22 +164,6 @@ export async function registerParticipant(formData) {
       .insert(primaryPayload)
       .select()
       .single();
-
-    // Fallback if remote schema doesn't yet have the 'department' column
-    if (insertError && (insertError.code === "42703" || insertError.message?.includes("department"))) {
-      const fallbackPayload = { ...primaryPayload };
-      delete fallbackPayload.department;
-      if (deptValue && domainValue && deptValue !== domainValue) {
-        fallbackPayload.domain = `${domainValue} (${deptValue})`;
-      }
-      const retryResult = await supabase
-        .from("registrations")
-        .insert(fallbackPayload)
-        .select()
-        .single();
-      inserted = retryResult.data;
-      insertError = retryResult.error;
-    }
 
     if (!insertError && inserted) {
       syncRegistrationToSheet(inserted).catch(() => {});
