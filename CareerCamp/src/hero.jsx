@@ -418,11 +418,11 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
                 ✕
               </button>
             </div>
-            <div style={{ padding: '24px', fontSize: '14px', lineHeight: '1.6', color: '#222' }}>
-              <h3 style={{ fontFamily: 'var(--font-hero)', fontSize: '24px', marginBottom: '8px' }}>
+            <div style={{ padding: '24px', fontSize: '14px', lineHeight: '1.6', color: '#222', fontFamily: "var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif)" }}>
+              <h3 style={{ fontFamily: "var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif)", fontWeight: 600, fontSize: '24px', marginBottom: '8px', letterSpacing: '-0.01em', color: '#111' }}>
                 INTENSIVE SESSIONS
               </h3>
-              <p style={{ marginBottom: '14px' }}>
+              <p style={{ marginBottom: '14px', fontFamily: "var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif)", fontWeight: 500, fontSize: '15px', lineHeight: '1.55', color: '#222', letterSpacing: '-0.005em' }}>
                 Launchpad is an intensive, high-signal single-day bootcamp. You
                 walk in confused with an ignored resume, and walk out with
                 clarity, a tailored 30-day action plan, and direct interview
@@ -430,11 +430,14 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
               </p>
               <div
                 style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '12px',
+                  fontFamily: "var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif)",
+                  fontWeight: 500,
+                  fontSize: '13px',
                   backgroundColor: 'rgba(0,0,0,0.06)',
                   padding: '12px',
                   borderLeft: '3px solid #111',
+                  letterSpacing: '0.005em',
+                  color: '#222',
                 }}
               >
                 <div>10:00 AM — REALITY CHECK & HIDDEN REASONS</div>
@@ -444,7 +447,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
               <button
                 type="button"
                 className="hero-primary-btn"
-                style={{ marginTop: '18px', width: '100%' }}
+                style={{ marginTop: '18px', width: '100%', fontFamily: "var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif)", fontWeight: 600 }}
                 onClick={() => {
                   setHowModalOpen(false);
                   onOpenRegister();
