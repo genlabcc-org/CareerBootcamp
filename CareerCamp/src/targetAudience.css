@@ -31,21 +31,25 @@
 }
 
 .audience-headline {
-  font-family: var(--font-hero, sans-serif);
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
   font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 600;
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 20px;
 }
 
 .audience-subtext {
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
   font-size: 16px;
+  font-weight: 500;
   color: #a0a0a0;
   max-width: 600px;
   margin-bottom: 44px;
   line-height: 1.5;
+  letter-spacing: -0.01em;
 }
 
 /* Grid of Audience Cards */
@@ -87,10 +91,12 @@
 }
 
 .audience-card-text {
-  font-size: 15px;
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-size: 15.5px;
   line-height: 1.55;
   color: #d6d6d6;
   font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 /* Responsive */

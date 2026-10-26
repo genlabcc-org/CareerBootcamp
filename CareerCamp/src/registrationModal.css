@@ -23,8 +23,9 @@
 }
 
 .reg-modal-card {
-  background: #121316;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #0c110d;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
   color: #f3f4f6;
   width: 100%;
   max-width: 780px;
@@ -40,17 +41,17 @@
 
 /* Custom sleek scrollbar for modal */
 .reg-modal-card::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 .reg-modal-card::-webkit-scrollbar-track {
-  background: #0e0f12;
+  background: #090d0a;
 }
 .reg-modal-card::-webkit-scrollbar-thumb {
-  background: #2b2e38;
+  background: #232924;
   border-radius: 4px;
 }
 .reg-modal-card::-webkit-scrollbar-thumb:hover {
-  background: #3e4252;
+  background: #353d36;
 }
 
 @keyframes modalZoomIn {
@@ -66,9 +67,9 @@
 
 /* Header */
 .reg-modal-header {
-  padding: 24px 32px 20px;
+  padding: 22px 28px 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: #15161b;
+  background: #101611;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -78,34 +79,37 @@
 }
 
 .reg-modal-tag {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
   font-size: 11px;
-  letter-spacing: 0.16em;
-  color: #9aa1b4;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #d4ff32;
   display: block;
   margin-bottom: 6px;
   text-transform: uppercase;
 }
 
 .reg-modal-title {
-  font-family: var(--font-hero, sans-serif);
-  font-size: 28px;
-  letter-spacing: 0.03em;
+  font-family: 'Clash Display Variable', 'Clash Display', sans-serif;
+  font-size: clamp(24px, 3.2vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
   color: #ffffff;
-  line-height: 1.05;
+  line-height: 1.1;
   margin: 0;
 }
 
 .reg-modal-close {
-  background: #1e2027;
-  border: 1px solid #2e313c;
-  color: #9aa0b0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
   width: 34px;
   height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.18s ease;
   flex-shrink: 0;
@@ -113,20 +117,21 @@
 }
 
 .reg-modal-close:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 /* Body */
 .reg-modal-body {
-  padding: 28px 32px 36px;
+  padding: 24px 28px 32px;
 }
 
 .reg-modal-subtitle {
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: #a4aab8;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
   margin-bottom: 24px;
 }
 
@@ -171,25 +176,27 @@
 }
 
 .reg-field-label {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
   font-size: 11.5px;
+  font-weight: 500;
   letter-spacing: 0.08em;
-  color: #b0b5c4;
+  color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
 }
 
 .reg-field-required::after {
   content: " *";
-  color: #f87171;
+  color: #d4ff32;
 }
 
 .reg-field-input,
 .reg-field-select {
-  background: #0b0c0f;
-  border: 1px solid #282a33;
+  background: #080c09;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
   color: #ffffff;
   padding: 12px 14px;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 14px;
   outline: none;
   transition: all 0.18s ease;
@@ -209,16 +216,16 @@
 }
 
 .reg-field-select option {
-  background: #14151a;
+  background: #0f1410;
   color: #ffffff;
   padding: 10px;
 }
 
 .reg-field-input:focus,
 .reg-field-select:focus {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
-  background: #0f1014;
+  border-color: #d4ff32;
+  box-shadow: 0 0 0 2px rgba(212, 255, 50, 0.2);
+  background: #0b100c;
 }
 
 .reg-field-input.has-error,
@@ -231,7 +238,7 @@
   font-size: 12px;
   color: #fca5a5;
   margin-top: 2px;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
 }
 
 /* "Others" Typing Sub-Input */
@@ -254,19 +261,20 @@
 .reg-field-sub-input {
   width: 100%;
   padding: 10px 14px;
-  background: #14161d;
-  border: 1px solid #3b3f4f;
+  background: #0b100c;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
   color: #ffffff;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 13.5px;
   outline: none;
-  transition: border-color 0.18s ease;
+  transition: all 0.18s ease;
   box-sizing: border-box;
 }
 
 .reg-field-sub-input:focus {
-  border-color: #ffffff;
-  background: #191c25;
+  border-color: #d4ff32;
+  box-shadow: 0 0 0 2px rgba(212, 255, 50, 0.2);
 }
 
 /* AI Skills Grid & Chips */
@@ -275,8 +283,9 @@
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 10px;
   margin-top: 4px;
-  background: #0b0c0f;
-  border: 1px solid #23252d;
+  background: #080c09;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   padding: 14px;
 }
 
@@ -285,9 +294,11 @@
   align-items: center;
   gap: 9px;
   font-size: 13px;
-  color: #c4c8d4;
-  background: #15161b;
-  border: 1px solid #262831;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  color: rgba(255, 255, 255, 0.8);
+  background: #111712;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   padding: 8px 12px;
   cursor: pointer;
   user-select: none;
@@ -295,20 +306,21 @@
 }
 
 .reg-skill-chip:hover {
-  border-color: #4a4e5e;
+  border-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
 }
 
 .reg-skill-chip.active {
-  background: #232530;
-  border-color: #ffffff;
-  color: #ffffff;
+  background: rgba(212, 255, 50, 0.12);
+  border-color: #d4ff32;
+  color: #d4ff32;
+  font-weight: 600;
 }
 
 .reg-skill-checkbox {
   width: 15px;
   height: 15px;
-  accent-color: #ffffff;
+  accent-color: #d4ff32;
   cursor: pointer;
 }
 
@@ -318,50 +330,51 @@
   align-items: flex-start;
   gap: 12px;
   padding: 16px;
-  background: #0c0d10;
-  border: 1px solid #262832;
+  background: #080c09;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   margin-top: 6px;
 }
 
 .reg-consent-checkbox {
   width: 17px;
   height: 17px;
-  accent-color: #ffffff;
+  accent-color: #d4ff32;
   cursor: pointer;
   margin-top: 2px;
   flex-shrink: 0;
 }
 
 .reg-consent-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 13px;
   line-height: 1.5;
-  color: #a4abb9;
+  color: rgba(255, 255, 255, 0.72);
   cursor: pointer;
 }
 
 /* Submit Button */
 .reg-submit-btn {
-  margin-top: 28px;
-  background: #ffffff;
-  color: #000000;
+  margin-top: 26px;
+  background: #d4ff32;
+  color: #0b110a;
   border: none;
-  padding: 16px 28px;
-  font-family: var(--font-body, sans-serif);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  padding: 15px 28px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  border-radius: 14px;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .reg-submit-btn:hover:not(:disabled) {
-  background: #e2e4e8;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
+  background: #dcff4e;
+  opacity: 0.95;
 }
 
 .reg-submit-btn:disabled {
@@ -378,8 +391,8 @@
 .reg-spinner {
   width: 18px;
   height: 18px;
-  border: 2px solid #666;
-  border-top-color: #000;
+  border: 2px solid rgba(11, 17, 10, 0.3);
+  border-top-color: #0b110a;
   border-radius: 50%;
   animation: regSpin 0.7s linear infinite;
 }
@@ -407,28 +420,30 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #22c55e;
-  color: #000000;
+  background: #d4ff32;
+  color: #0b110a;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 26px;
   font-weight: 900;
   margin: 0 auto 14px;
-  box-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 25px rgba(212, 255, 50, 0.4);
 }
 
 .reg-success-heading {
-  font-family: var(--font-hero, sans-serif);
-  font-size: 32px;
-  letter-spacing: 0.04em;
+  font-family: 'Clash Display Variable', 'Clash Display', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: #ffffff;
   margin-bottom: 8px;
 }
 
 .reg-success-lead {
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 14.5px;
-  color: #a4abb9;
+  color: rgba(255, 255, 255, 0.72);
   max-width: 540px;
   margin: 0 auto;
   line-height: 1.5;
@@ -443,6 +458,7 @@
   background: #ffffff;
   color: #000000;
   border: 2px solid #000000;
+  border-radius: 12px;
   padding: 24px;
   position: relative;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
@@ -458,9 +474,10 @@
 
 .reg-ticket-brand {
   display: block;
-  font-family: var(--font-hero, sans-serif);
+  font-family: 'Clash Display Variable', 'Clash Display', sans-serif;
   font-size: 22px;
-  letter-spacing: 0.03em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: #000000;
   line-height: 1;
 }
@@ -615,25 +632,25 @@
 
 .reg-btn-download {
   width: 100%;
-  background: #ffffff;
-  color: #000000;
+  background: #d4ff32;
+  color: #0b110a;
   border: none;
   padding: 15px 24px;
-  font-family: var(--font-body, sans-serif);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .reg-btn-download:hover:not(:disabled) {
-  background: #dedede;
-  transform: translateY(-1px);
+  background: #dcff4e;
+  opacity: 0.95;
 }
 
 .reg-btn-download:disabled {
@@ -648,11 +665,12 @@
 }
 
 .reg-btn-secondary {
-  background: #1a1c22;
-  border: 1px solid #333744;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
   color: #e4e4e7;
   padding: 13px 18px;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 13.5px;
   font-weight: 600;
   cursor: pointer;
@@ -661,9 +679,9 @@
 }
 
 .reg-btn-secondary:hover {
-  background: #252832;
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
-  border-color: #555b70;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .reg-btn-secondary.done-btn {

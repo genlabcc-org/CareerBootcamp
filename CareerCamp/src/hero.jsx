@@ -354,7 +354,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
                 06 // EVENT DETAILS & REGISTER
               </a>
             </li>
-            <li style={{ marginTop: '8px', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '8px' }}>
+            <li style={{ marginTop: '6px', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '6px' }}>
               <a
                 href="#poster"
                 onClick={(e) => {
@@ -362,6 +362,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
                   setIsMenuOpen(false);
                   onOpenPoster();
                 }}
+                style={{ color: '#d4ff32', fontWeight: 600 }}
               >
                 OPEN EVENT POSTER
               </a>

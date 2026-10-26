@@ -1,19 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './posterModal.css';
 
 /**
  * Event Poster Modal Component
+ * Displays the full graphic event poster directly without text outline tab.
  */
 export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
-  const [activeTab, setActiveTab] = useState('graphic'); // 'graphic' | 'syllabus'
-  const [selectedTaglineIdx, setSelectedTaglineIdx] = useState(0);
-
-  const taglines = [
-    'Talent is there. Direction is missing. Let\'s fix that.',
-    'One day. One shift. Your career, back on track.',
-    'Stop applying blindly. Start preparing smartly.',
-  ];
-
   if (!isOpen) return null;
 
   return (
@@ -33,127 +25,16 @@ export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
           ✕
         </button>
 
-        {/* View Switcher */}
-        <div className="poster-view-toggle">
-          <button
-            type="button"
-            className={`poster-toggle-tab ${activeTab === 'graphic' ? 'active' : ''}`}
-            onClick={() => setActiveTab('graphic')}
-          >
-            Graphic Poster
-          </button>
-          <button
-            type="button"
-            className={`poster-toggle-tab ${activeTab === 'syllabus' ? 'active' : ''}`}
-            onClick={() => setActiveTab('syllabus')}
-          >
-            Text Outline
-          </button>
+        <div className="poster-modal-graphic-wrap">
+          <img
+            src="/images/PosterBoot.png"
+            alt="GenLab Launchpad Event Poster Full"
+            className="poster-modal-graphic-img"
+          />
         </div>
 
-        {activeTab === 'graphic' ? (
-          <div>
-            <div className="poster-modal-graphic-wrap">
-              <img
-                src="/images/PosterBoot.png"
-                alt="GenLab Launchpad Event Poster Full"
-                className="poster-modal-graphic-img"
-              />
-            </div>
-          </div>
-        ) : (
-          <div>
-            {/* Poster Top Bar */}
-            <div className="poster-top-bar">
-              <div className="poster-brand">GENLAB LAUNCHPAD</div>
-              <div className="poster-badge">OCT 31, 2026 // FREE</div>
-            </div>
-
-            {/* Big Catchy Headline */}
-            <h2 className="poster-main-head">
-              NOT GETTING HIRED?
-              <br />
-              LET'S FIND OUT WHY.
-            </h2>
-
-            <p className="poster-subtitle">
-              A FREE 1-Day Career Reset Program for Job Seekers & Final-Year Students
-            </p>
-
-            {/* Bullets box */}
-            <div className="poster-bullets-box">
-              <div className="poster-bullets-title">IN JUST ONE DAY, YOU'LL LEARN:</div>
-              <ul className="poster-bullet-list">
-                <li className="poster-bullet-item">
-                  <span className="poster-bullet-check">✔</span>
-                  <span>Why you're not getting shortlisted by recruiters</span>
-                </li>
-                <li className="poster-bullet-item">
-                  <span className="poster-bullet-check">✔</span>
-                  <span>The industry skill gap, completely decoded</span>
-                </li>
-                <li className="poster-bullet-item">
-                  <span className="poster-bullet-check">✔</span>
-                  <span>How to crack tech interviews with true confidence</span>
-                </li>
-                <li className="poster-bullet-item">
-                  <span className="poster-bullet-check">✔</span>
-                  <span>Unvarnished career clarity, finally</span>
-                </li>
-                <li className="poster-bullet-item">
-                  <span className="poster-bullet-check">✔</span>
-                  <span>How to build a portfolio that commands attention</span>
-                </li>
-              </ul>
-
-              <div className="poster-mantra-highlight">
-                PLUS: THE JOB INTERVIEW MANTRA
-              </div>
-            </div>
-
-            {/* Event Details Strip */}
-            <div className="poster-strip">
-              <span>31st Oct, Saturday</span>
-              <span>10:00 AM</span>
-              <span>GenLab Office</span>
-              <span>100% FREE ENTRY</span>
-            </div>
-
-            {/* Switchable Taglines */}
-            <div
-              className="poster-tagline-box"
-              onClick={() =>
-                setSelectedTaglineIdx((prev) => (prev + 1) % taglines.length)
-              }
-              title="Click to toggle tagline option"
-              style={{ cursor: 'pointer' }}
-            >
-              "{taglines[selectedTaglineIdx]}"
-              <div
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '10px',
-                  color: '#777',
-                  marginTop: '4px',
-                  textTransform: 'none',
-                }}
-              >
-                (Click to cycle tagline options: {selectedTaglineIdx + 1}/3)
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Poster Footer Actions */}
+        {/* Poster Footer Action */}
         <div className="poster-footer">
-          <button
-            type="button"
-            className="poster-print-btn"
-            onClick={() => window.print()}
-          >
-            Print / Save PDF
-          </button>
-
           <button
             type="button"
             className="poster-cta-btn"
@@ -162,7 +43,7 @@ export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
               onOpenRegister();
             }}
           >
-            Reserve Seat Now
+            Register Now
           </button>
         </div>
       </div>
