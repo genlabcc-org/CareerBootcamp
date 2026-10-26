@@ -6,10 +6,10 @@
   position: relative;
   width: 100%;
   padding: 100px 44px;
-  background-color: #bebfca;
-  background: linear-gradient(180deg, #c6c9ce 0%, #b8bbc1 100%);
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  background: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
   overflow: hidden;
 }
 
@@ -34,37 +34,37 @@
   position: absolute;
   inset: -60px;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 80%);
   animation: gap-grid-drift 24s linear infinite;
 }
 
 .gap-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.55;
+  filter: blur(80px);
+  opacity: 0.35;
   will-change: transform;
 }
 
 .gap-orb--a {
-  width: 420px;
-  height: 420px;
+  width: 480px;
+  height: 480px;
   top: -120px;
   left: -100px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.03), transparent 70%);
   animation: gap-float-a 14s ease-in-out infinite;
 }
 
 .gap-orb--b {
-  width: 360px;
-  height: 360px;
+  width: 400px;
+  height: 400px;
   bottom: -100px;
   right: -80px;
-  background: radial-gradient(circle, rgba(90, 100, 130, 0.45), rgba(90, 100, 130, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.025), transparent 70%);
   animation: gap-float-b 18s ease-in-out infinite;
 }
 
@@ -121,8 +121,8 @@
   font-family: var(--font-mono, monospace);
   font-size: 12px;
   letter-spacing: 0.15em;
-  color: #3e4147;
-  font-weight: 600;
+  color: #444444;
+  font-weight: 700;
   margin-bottom: 16px;
   display: block;
 }
@@ -143,7 +143,7 @@
   line-height: 0.95;
   letter-spacing: -0.025em;
   text-transform: uppercase;
-  color: #0f1012;
+  color: #000000;
   margin-bottom: 30px;
 }
 
@@ -171,12 +171,11 @@
 
 /* Narrative card */
 .gap-narrative-card {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border: 1.5px solid #111111;
   padding: 36px 40px;
-  margin-bottom: 36px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
   border-radius: 6px;
@@ -190,7 +189,7 @@
   left: -60%;
   width: 40%;
   height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  background: linear-gradient(100deg, transparent, rgba(0, 0, 0, 0.04), transparent);
   transform: skewX(-18deg);
   pointer-events: none;
   opacity: 0;
@@ -216,7 +215,7 @@
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: clamp(1.15rem, 2vw, 1.45rem);
   line-height: 1.6;
-  color: #1a1a1a;
+  color: #111111;
   font-weight: 500;
   margin-bottom: 8px;
 }
@@ -226,7 +225,7 @@
   display: inline-block;
   position: relative;
   overflow: hidden;
-  background: #111111;
+  background: #000000;
   color: #ffffff;
   padding: 10px 20px;
   font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
@@ -271,7 +270,7 @@
 /* Bottom Callout */
 .gap-bottom-badge {
   margin-top: 10px;
-  background: #111111;
+  background: #000000;
   color: #ffffff;
   padding: 20px 28px;
   display: flex;
@@ -280,6 +279,7 @@
   flex-wrap: wrap;
   gap: 16px;
   border-radius: 6px;
+  border: 1px solid #000000;
 }
 
 .gap-badge-text {
@@ -287,18 +287,20 @@
   font-size: clamp(14px, 1.3vw, 17px);
   font-weight: 500;
   letter-spacing: 0.015em;
+  color: #ffffff;
 }
 
 .gap-badge-btn {
   position: relative;
   background: #ffffff;
-  color: #111111;
+  color: #000000;
   border: none;
   font-family: var(--font-body, sans-serif);
   font-size: 14px;
-  font-weight: 600;
-  padding: 10px 20px;
+  font-weight: 700;
+  padding: 10px 22px;
   cursor: pointer;
+  border-radius: 4px;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -325,7 +327,7 @@
 }
 
 .gap-badge-btn:hover {
-  background: #dedede;
+  background: #eaeaea;
   transform: translateY(-2px);
 }
 
