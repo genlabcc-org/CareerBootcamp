@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" fill="#000000" />
+  <!-- Top-Left Quadrant: 2 horizontal semicircles -->
+  <path d="M 0,0 A 25,25 0 0,0 50,0 Z" fill="#f0f0f0" />
+  <path d="M 0,50 A 25,25 0 0,1 50,50 Z" fill="#f0f0f0" />
+
+  <!-- Top-Right Quadrant: 2 vertical semicircles -->
+  <path d="M 50,0 A 25,25 0 0,1 50,50 Z" fill="#f0f0f0" />
+  <path d="M 100,0 A 25,25 0 0,0 100,50 Z" fill="#f0f0f0" />
+
+  <!-- Bottom-Left Quadrant: 2 vertical semicircles -->
+  <path d="M 0,50 A 25,25 0 0,1 0,100 Z" fill="#f0f0f0" />
+  <path d="M 50,50 A 25,25 0 0,0 50,100 Z" fill="#f0f0f0" />
+
+  <!-- Bottom-Right Quadrant: 2 horizontal semicircles -->
+  <path d="M 50,50 A 25,25 0 0,0 100,50 Z" fill="#f0f0f0" />
+  <path d="M 50,100 A 25,25 0 0,1 100,100 Z" fill="#f0f0f0" />
+</svg>

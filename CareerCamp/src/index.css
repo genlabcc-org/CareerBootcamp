@@ -1,7 +1,16 @@
+@font-face {
+  font-family: 'Clash Display Variable';
+  src: url('https://cdn.fontshare.com/wf/2GQIT54GKQY3JRFTSHS4ARTRNRQISSAA/3CIP5EBHRRHE5FVQU3VFROPUERNDSTDF/JTSL5QESUXATU47LCPUNHZQBDDIWDOSW.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --font-hero: 'Anton', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-clash: 'Clash Display Variable', 'Clash Display', sans-serif;
 
   --color-black: #0d0d0d;
   --color-dark: #181818;

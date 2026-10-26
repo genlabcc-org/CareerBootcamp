@@ -94,29 +94,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
       <div className="daemon-vignette-layer" aria-hidden="true" />
       <div className="daemon-grain-layer" aria-hidden="true" />
 
-      {/* 2. Technical Grid Lines & Crosshairs */}
-      <div className="daemon-grid-layer" aria-hidden="true">
-        <div className="grid-line-vertical" style={{ left: '22%' }} />
-        <div className="grid-line-vertical" style={{ left: '58%' }} />
-        <div className="grid-line-vertical" style={{ left: '78%' }} />
 
-        <div className="grid-line-horizontal" style={{ top: '16%' }} />
-        <div className="grid-line-horizontal" style={{ top: '42%' }} />
-        <div className="grid-line-horizontal" style={{ top: '68%' }} />
-        <div className="grid-line-horizontal" style={{ top: '88%' }} />
-
-        <span className="grid-cross" style={{ left: '22%', top: '16%' }}>+</span>
-        <span className="grid-cross" style={{ left: '22%', top: '42%' }}>+</span>
-        <span className="grid-cross" style={{ left: '22%', top: '68%' }}>+</span>
-        <span className="grid-cross" style={{ left: '22%', top: '88%' }}>+</span>
-
-        <span className="grid-cross" style={{ left: '58%', top: '42%' }}>+</span>
-        <span className="grid-cross" style={{ left: '58%', top: '68%' }}>+</span>
-        <span className="grid-cross" style={{ left: '58%', top: '88%' }}>+</span>
-
-        <span className="grid-cross" style={{ left: '78%', top: '16%' }}>+</span>
-        <span className="grid-cross" style={{ left: '78%', top: '68%' }}>+</span>
-      </div>
 
       {/* 3. Hero Foreground Content */}
       <div className="daemon-content-wrapper">
@@ -125,15 +103,13 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
           <a
             href="#hero"
             className="daemon-brand"
+            aria-label="GenLab LaunchPad"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <DaemonLogo size={32} />
-            <span className="daemon-brand-text">
-              GenLab LaunchPad<sup>®</sup>
-            </span>
+            <DaemonLogo size={36} />
           </a>
 
           {/* Hamburger Menu Toggle */}
@@ -150,141 +126,142 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
           </button>
         </header>
 
-        {/* Hero Main Content */}
-        <section className="daemon-hero" aria-label="Hero Introduction">
-          <div className="daemon-hero-title-wrap">
-            {/* Event Strip */}
-            <div className="hero-event-strip">
-              <span className="hero-strip-item"> Saturday, 31st October</span>
-              <span className="hero-strip-divider">|</span>
-              <span className="hero-strip-item"> 10:00 AM</span>
-              <span className="hero-strip-divider">|</span>
-              <span className="hero-strip-item"> GenLab Office</span>
-              <span className="hero-strip-divider">|</span>
-              <span className="hero-strip-item"> 100% Free</span>
-            </div>
+        {/* Launchpad Hero Section Matching Reference Poster */}
+        <section className="launchpad-hero-section" aria-label="GenLab Launchpad Introduction">
+          {/* Left Column: Typography & CTAs */}
+          <div className="launchpad-left-col">
+            <h1 className="launchpad-main-title">Launchpad</h1>
 
-            {/* Main Bold Headline (Clickable to cycle options) */}
-            <h1
-              className="daemon-hero-headline"
-              onClick={() =>
-                setActiveHeadlineIdx(
-                  (prev) => (prev + 1) % headlineOptions.length
-                )
-              }
-              title="Click to cycle headline options (1-3)"
-              style={{ cursor: 'pointer' }}
-            >
-              <span>{currentHeadline.line1}</span>
-              <span>{currentHeadline.line2}</span>
-              <span>{currentHeadline.line3}</span>
-            </h1>
+            <div className="launchpad-left-body">
+              <h2 className="launchpad-program-tagline">
+              A <span className="highlight-lime">FREE</span> 1-DAY CAREER
+              <br />
+              RESET PROGRAM
+            </h2>
 
-            {/* Sub-headline */}
-            <p className="hero-subheadline">
-              <strong>A free, 1-day career reset</strong> for job seekers and
-              final-year students. Real talk, real skills, real direction.{' '}
-              <em>No fluff.</em>
-            </p>
-
-            {/* CTA Group */}
-            <div className="hero-cta-group">
-              <button
-                type="button"
-                className="hero-primary-btn"
-                onClick={onOpenRegister}
-              >
-                <span>Reserve My Free Seat</span>
-                <span aria-hidden="true">→</span>
-              </button>
-              <span className="hero-cta-subtext">
-                Limited seats. No fees. No catch.
-              </span>
-            </div>
-          </div>
-
-          {/* Right Column Services & Event Poster */}
-          <div className="daemon-hero-sidebar">
-            {/* Event Poster Showcase */}
-            <div
-              className="hero-poster-frame"
-              onClick={onOpenPoster}
-              title="Click to expand event poster"
-            >
-              <div className="poster-frame-header">
-                <span className="poster-frame-tag">OFFICIAL POSTER // OCT 31</span>
-                <span className="poster-zoom-btn">Click to Expand</span>
+            {/* Event Details Strip */}
+            <div className="launchpad-details-strip">
+              <div className="launchpad-detail-col">
+                <svg
+                  className="launchpad-detail-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                <div className="launchpad-detail-info">
+                  <strong>31st Oct</strong>
+                  <span>Saturday</span>
+                </div>
               </div>
-              <div className="poster-frame-img-box">
-                <img
-                  src="/images/PosterBoot.png"
-                  alt="GenLab Launchpad Official Event Poster"
-                  className="hero-poster-img"
-                  loading="eager"
-                />
-                <div className="poster-frame-hover-hint">
-                  <span>Click to view full poster</span>
+
+              <div className="launchpad-detail-divider" />
+
+              <div className="launchpad-detail-col">
+                <svg
+                  className="launchpad-detail-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <div className="launchpad-detail-info">
+                  <strong>GenLab</strong>
+                  <span>Office</span>
+                </div>
+              </div>
+
+              <div className="launchpad-detail-divider" />
+
+              <div className="launchpad-detail-col">
+                <svg
+                  className="launchpad-detail-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <div className="launchpad-detail-info">
+                  <strong>10:30 AM</strong>
+                </div>
+              </div>
+
+              <div className="launchpad-detail-divider" />
+
+              <div className="launchpad-detail-col">
+                <svg
+                  className="launchpad-detail-icon"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z" />
+                </svg>
+                <div className="launchpad-detail-info">
+                  <strong>Free</strong>
+                  <span>Entry</span>
                 </div>
               </div>
             </div>
 
-            <div className="hero-sidebar-actions">
-              <button
-                type="button"
-                className="daemon-how-btn"
-                onClick={onOpenPoster}
-              >
-                <span className="corner-icon corner-tl" aria-hidden="true">⌖</span>
-                <span className="corner-icon corner-tr" aria-hidden="true">⌖</span>
-                <span>View Full Poster</span>
-                <span className="corner-icon corner-bl" aria-hidden="true">⌖</span>
-                <span className="corner-icon corner-br" aria-hidden="true">⌖</span>
-              </button>
-
-              <button
-                type="button"
-                className="daemon-how-btn"
-                style={{ backgroundColor: '#2b2b2b' }}
-                onClick={() => setHowModalOpen(true)}
-              >
-                <span className="corner-icon corner-tl" aria-hidden="true">⊘</span>
-                <span className="corner-icon corner-tr" aria-hidden="true">⊘</span>
-                <span>How It Works</span>
-                <span className="corner-icon corner-bl" aria-hidden="true">⊘</span>
-                <span className="corner-icon corner-br" aria-hidden="true">⊘</span>
-              </button>
+              <div className="launchpad-cta-wrapper">
+                <button
+                  type="button"
+                  className="launchpad-register-btn"
+                  onClick={onOpenRegister}
+                >
+                  Register Now!
+                </button>
+              </div>
             </div>
+          </div>
 
-            {/* The Harsh Reality Points */}
-            <ul className="daemon-services-list">
-              <li className="daemon-service-item">
-                <span className="daemon-service-bullet">01/</span>
-                <span>Not Unemployable. Just Underprepared.</span>
-              </li>
-              <li className="daemon-service-item">
-                <span className="daemon-service-bullet">02/</span>
-                <span>50 Applications. 2 Replies. Why?</span>
-              </li>
-              <li className="daemon-service-item">
-                <span className="daemon-service-bullet">03/</span>
-                <span>Degree Done. Job Pending. Let's Fix That.</span>
-              </li>
-              <li className="daemon-service-item">
-                <span className="daemon-service-bullet">04/</span>
-                <span>AI Is Here. Are You Ready For It?</span>
-              </li>
-            </ul>
+          {/* Right Column: Statue Graphic */}
+          <div
+            className="launchpad-right-col"
+            onClick={onOpenPoster}
+            style={{ cursor: 'pointer' }}
+            title="Click to view full poster"
+          >
+            <img
+              src="/images/statue.png"
+              alt="GenLab Launchpad - Job Offer Letter"
+              className="launchpad-statue-img"
+            />
           </div>
         </section>
-
-        {/* Footer Mission Statement */}
-        <footer className="daemon-footer">
-          <span className="daemon-footer-tag">GENLAB LAUNCHPAD 2026 //</span>
-          <p className="daemon-footer-text">
-            "One day won't solve everything. But it can change the direction of
-            everything."
-          </p>
-        </footer>
       </div>
 
       {/* 4. Floating Navigation Drawer */}
@@ -298,10 +275,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
         >
           <div className="daemon-nav-header">
             <div className="daemon-nav-header-left">
-              <DaemonLogo size={24} />
-              <span className="daemon-brand-text" style={{ fontSize: '18px' }}>
-                GenLab<sup>®</sup>
-              </span>
+              <DaemonLogo size={28} />
             </div>
             <button
               type="button"

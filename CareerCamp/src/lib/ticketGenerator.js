@@ -81,10 +81,16 @@ export async function generateTicketPNG(participant) {
   };
 
   renderField("Participant Name", participant.full_name || participant.fullName, 60, 280, 320);
-  renderField("College / Institution", participant.college_name || participant.collegeName, 420, 280, 320);
-  renderField("Department", participant.department || participant.domain, 60, 355, 320);
-  renderField("Domain", participant.domain || participant.department, 420, 355, 320);
-  renderField("Graduation Year", participant.pass_out_year || participant.passOutYear, 60, 430, 320);
+  const collegeOrPhone = participant.college_name || participant.collegeName;
+  if (collegeOrPhone) {
+    renderField("College / Institution", collegeOrPhone, 420, 280, 320);
+  } else {
+    renderField("Phone Number", participant.phone_number || participant.phoneNumber || "N/A", 420, 280, 320);
+  }
+  renderField("Domain / Role", participant.domain || participant.department || "N/A", 60, 355, 320);
+  renderField("Graduation Year", participant.pass_out_year || participant.passOutYear || "N/A", 420, 355, 320);
+  renderField("Event Schedule", "31st Oct • 10:00 AM", 60, 430, 320);
+  renderField("Venue Location", "GenLab Office", 420, 430, 320);
 
   // Dashed tear line separator
   ctx.beginPath();

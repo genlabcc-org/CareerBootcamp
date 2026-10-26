@@ -12,18 +12,10 @@ export const DEPARTMENT_OPTIONS = [
 ];
 
 export const DOMAIN_OPTIONS = [
-  "Full Stack Web Development",
-  "Frontend Development",
-  "Backend & API Engineering",
-  "Artificial Intelligence & Machine Learning",
-  "Data Science & Analytics",
-  "Cloud Computing & DevOps",
-  "Cybersecurity & Ethical Hacking",
-  "Mobile App Development",
-  "UI/UX Design & Product",
-  "Embedded Systems & IoT",
-  "Blockchain & Web3",
-  "Others",
+  "Software Development",
+  "HR administration",
+  "Digital Marketing",
+  "Design",
 ];
 
 export const AI_SKILL_OPTIONS = [
@@ -79,22 +71,12 @@ export function validateRegistrationForm(formData) {
     errors.phoneNumber = "Please enter a valid phone number (at least 10 digits).";
   }
 
-  // College Name
-  if (!formData.collegeName || formData.collegeName.trim().length < 2) {
-    errors.collegeName = "College name is required.";
-  }
-
   // Pass Out Year (Dropdown with Others)
   const passYear = (formData.passOutYear || "").toString().trim();
   if (!passYear || passYear === "Others") {
     errors.passOutYear = "Please select or type your graduation year.";
   }
 
-  // Department (Dropdown with Others)
-  const dept = (formData.department || formData.domain || "").trim();
-  if (!dept || dept === "Others") {
-    errors.department = "Please select or type your department.";
-  }
 
   // Domain (Dropdown with Others)
   const dom = (formData.domain || "").trim();

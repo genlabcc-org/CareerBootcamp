@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import QRCode from 'qrcode';
 import './registrationModal.css';
 import {
-  DEPARTMENT_OPTIONS,
   DOMAIN_OPTIONS,
-  AI_SKILL_OPTIONS,
   PASSOUT_YEAR_OPTIONS,
   validateRegistrationForm,
 } from './lib/validators';
@@ -228,30 +226,18 @@ export default function RegistrationModal({ isOpen, onClose }) {
         ? customPassOutYear.trim()
         : (passOutYearSelect || formData.passOutYear);
 
-    // Resolve final department
-    const finalDept =
-      departmentSelect === 'Others'
-        ? customDepartment.trim()
-        : (departmentSelect || formData.department);
-
     // Resolve final domain
     const finalDomain =
       domainSelect === 'Others'
         ? customDomain.trim()
         : (domainSelect || formData.domain);
 
-    // Resolve AI skills with custom Other text if typed
-    let finalSkills = [...formData.aiSkills];
-    if (finalSkills.includes('Other') && customAiSkill.trim()) {
-      finalSkills = finalSkills.map((s) => (s === 'Other' ? `Other: ${customAiSkill.trim()}` : s));
-    }
-
     const submissionPayload = {
       ...formData,
       passOutYear: finalYear,
-      department: finalDept,
+      department: finalDomain,
       domain: finalDomain,
-      aiSkills: finalSkills,
+      aiSkills: [],
     };
 
     // Validate using the shared validator
@@ -433,100 +419,6 @@ export default function RegistrationModal({ isOpen, onClose }) {
                     {errors.phoneNumber && <span className="reg-error-msg">{errors.phoneNumber}</span>}
                   </div>
 
-                  {/* College Name */}
-                  <div className="reg-field-group">
-                    <label htmlFor="field-collegeName" className="reg-field-label reg-field-required">
-                      College Name
-                    </label>
-                    <input
-                      id="field-collegeName"
-                      name="collegeName"
-                      type="text"
-                      placeholder="e.g. Government College of Technology"
-                      value={formData.collegeName}
-                      onChange={handleChange}
-                      className={`reg-field-input ${errors.collegeName ? 'has-error' : ''}`}
-                      disabled={isSubmitting}
-                    />
-                    {errors.collegeName && <span className="reg-error-msg">{errors.collegeName}</span>}
-                  </div>
-
-                  {/* Department (Dropdown with Others option) */}
-                  <div className="reg-field-group">
-                    <label htmlFor="field-department" className="reg-field-label reg-field-required">
-                      Department
-                    </label>
-                    <select
-                      id="field-department"
-                      name="department"
-                      value={departmentSelect}
-                      onChange={handleDepartmentSelectChange}
-                      className={`reg-field-select ${errors.department ? 'has-error' : ''}`}
-                      disabled={isSubmitting}
-                    >
-                      <option value="">Select Department...</option>
-                      {DEPARTMENT_OPTIONS.map((dept) => (
-                        <option key={dept} value={dept}>
-                          {dept}
-                        </option>
-                      ))}
-                    </select>
-
-                    {/* Typing bar if Others selected */}
-                    {departmentSelect === 'Others' && (
-                      <div className="reg-other-typing-wrapper">
-                        <input
-                          type="text"
-                          className="reg-field-sub-input"
-                          placeholder="Type your department (e.g. Biotechnology, Chemical)..."
-                          value={customDepartment}
-                          onChange={handleCustomDepartmentChange}
-                          disabled={isSubmitting}
-                          autoFocus
-                        />
-                      </div>
-                    )}
-                    {errors.department && <span className="reg-error-msg">{errors.department}</span>}
-                  </div>
-
-                  {/* Domain (Dropdown with Others option) */}
-                  <div className="reg-field-group">
-                    <label htmlFor="field-domain" className="reg-field-label reg-field-required">
-                      Domain
-                    </label>
-                    <select
-                      id="field-domain"
-                      name="domain"
-                      value={domainSelect}
-                      onChange={handleDomainSelectChange}
-                      className={`reg-field-select ${errors.domain ? 'has-error' : ''}`}
-                      disabled={isSubmitting}
-                    >
-                      <option value="">Select Domain...</option>
-                      {DOMAIN_OPTIONS.map((item) => (
-                        <option key={item} value={item}>
-                          {item}
-                        </option>
-                      ))}
-                    </select>
-
-                    {/* Typing bar if Others selected */}
-                    {domainSelect === 'Others' && (
-                      <div className="reg-other-typing-wrapper">
-                        <input
-                          type="text"
-                          className="reg-field-sub-input"
-                          placeholder="Type your domain (e.g. Game Development, AR/VR, Embedded)..."
-                          value={customDomain}
-                          onChange={handleCustomDomainChange}
-                          disabled={isSubmitting}
-                          autoFocus
-                        />
-                      </div>
-                    )}
-                    {errors.domain && <span className="reg-error-msg">{errors.domain}</span>}
-                  </div>
-
                   {/* Year of Pass Out (Dropdown with Others option) */}
                   <div className="reg-field-group">
                     <label htmlFor="field-passOutYear" className="reg-field-label reg-field-required">
@@ -565,40 +457,42 @@ export default function RegistrationModal({ isOpen, onClose }) {
                     {errors.passOutYear && <span className="reg-error-msg">{errors.passOutYear}</span>}
                   </div>
 
-                  {/* AI Skill Set */}
+                  {/* Domain (Dropdown with Others option) */}
                   <div className="reg-field-group-full">
-                    <label className="reg-field-label">AI Skill Set (Select all that apply)</label>
-                    <div className="reg-skills-grid">
-                      {AI_SKILL_OPTIONS.map((skill) => (
-                        <label
-                          key={skill}
-                          className={`reg-skill-chip ${formData.aiSkills.includes(skill) ? 'active' : ''}`}
-                        >
-                          <input
-                            type="checkbox"
-                            className="reg-skill-checkbox"
-                            checked={formData.aiSkills.includes(skill)}
-                            onChange={() => handleSkillToggle(skill)}
-                            disabled={isSubmitting}
-                          />
-                          <span>{skill}</span>
-                        </label>
+                    <label htmlFor="field-domain" className="reg-field-label reg-field-required">
+                      Domain
+                    </label>
+                    <select
+                      id="field-domain"
+                      name="domain"
+                      value={domainSelect}
+                      onChange={handleDomainSelectChange}
+                      className={`reg-field-select ${errors.domain ? 'has-error' : ''}`}
+                      disabled={isSubmitting}
+                    >
+                      <option value="">Select Domain...</option>
+                      {DOMAIN_OPTIONS.map((item) => (
+                        <option key={item} value={item}>
+                          {item}
+                        </option>
                       ))}
-                    </div>
+                    </select>
 
-                    {/* Typing bar if 'Other' is checked in AI Skills */}
-                    {formData.aiSkills.includes('Other') && (
-                      <div className="reg-other-typing-wrapper" style={{ marginTop: 10 }}>
+                    {/* Typing bar if Others selected */}
+                    {domainSelect === 'Others' && (
+                      <div className="reg-other-typing-wrapper">
                         <input
                           type="text"
                           className="reg-field-sub-input"
-                          placeholder="Type your other AI skill sets (e.g. Reinforcement Learning, MLOps, Audio AI)..."
-                          value={customAiSkill}
-                          onChange={(e) => setCustomAiSkill(e.target.value)}
+                          placeholder="Type your domain (e.g. Game Development, AR/VR, Embedded)..."
+                          value={customDomain}
+                          onChange={handleCustomDomainChange}
                           disabled={isSubmitting}
+                          autoFocus
                         />
                       </div>
                     )}
+                    {errors.domain && <span className="reg-error-msg">{errors.domain}</span>}
                   </div>
 
                   {/* Consent Checkbox */}
@@ -676,12 +570,12 @@ export default function RegistrationModal({ isOpen, onClose }) {
                     <span className="reg-ticket-val">{confirmedData.full_name}</span>
                   </div>
                   <div className="reg-ticket-item">
-                    <span className="reg-ticket-label">COLLEGE / INSTITUTION</span>
-                    <span className="reg-ticket-val">{confirmedData.college_name || 'N/A'}</span>
-                  </div>
-                  <div className="reg-ticket-item">
-                    <span className="reg-ticket-label">DEPARTMENT</span>
-                    <span className="reg-ticket-val">{confirmedData.department || confirmedData.domain || 'N/A'}</span>
+                    <span className="reg-ticket-label">
+                      {confirmedData.college_name ? 'COLLEGE / INSTITUTION' : 'PHONE NUMBER'}
+                    </span>
+                    <span className="reg-ticket-val">
+                      {confirmedData.college_name || confirmedData.phone_number || 'N/A'}
+                    </span>
                   </div>
                   <div className="reg-ticket-item">
                     <span className="reg-ticket-label">DOMAIN</span>
@@ -694,6 +588,10 @@ export default function RegistrationModal({ isOpen, onClose }) {
                   <div className="reg-ticket-item">
                     <span className="reg-ticket-label">EVENT DATE & TIME</span>
                     <span className="reg-ticket-val">Saturday, 31st Oct • 10:00 AM</span>
+                  </div>
+                  <div className="reg-ticket-item">
+                    <span className="reg-ticket-label">VENUE LOCATION</span>
+                    <span className="reg-ticket-val">GenLab Office</span>
                   </div>
                 </div>
 
