@@ -212,12 +212,19 @@
 }
 
 .gap-lead-text {
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
-  line-height: 1.6;
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  line-height: 1.5;
   color: #111111;
   font-weight: 500;
+  letter-spacing: -0.01em;
   margin-bottom: 8px;
+}
+
+.gap-lead-text em {
+  font-style: italic;
+  font-weight: 600;
+  color: #000000;
 }
 
 /* Emphasis banner: wipes in left to right, then gets a periodic shine */
