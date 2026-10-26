@@ -325,24 +325,13 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
             </li>
             <li>
               <a
-                href="#agenda"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('agenda');
-                }}
-              >
-                03 // WHAT YOU'LL GET
-              </a>
-            </li>
-            <li>
-              <a
                 href="#target-audience"
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick('target-audience');
                 }}
               >
-                04 // WHO IT'S FOR
+                03 // WHO IT'S FOR
               </a>
             </li>
             <li>
@@ -353,7 +342,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
                   handleNavClick('transformation');
                 }}
               >
-                05 // TRANSFORMATION
+                04 // TRANSFORMATION
               </a>
             </li>
             <li>
@@ -364,7 +353,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
                   handleNavClick('event-details');
                 }}
               >
-                06 // EVENT DETAILS & REGISTER
+                05 // EVENT DETAILS & REGISTER
               </a>
             </li>
             <li style={{ marginTop: '6px', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '6px' }}>

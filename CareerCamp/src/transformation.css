@@ -1,15 +1,31 @@
 /* ==========================================================================
-   Section 5: What Changes After This Day? (Transformation)
+   Section 4: What Changes After This Day? (Transformation - Black & White Theme)
    ========================================================================== */
 
 .trans-section {
   position: relative;
   width: 100%;
   padding: 100px 44px;
-  background-color: #c4c7cd;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  background: #ffffff;
+  color: #000000;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
   overflow: hidden;
+}
+
+.trans-section::before {
+  content: '';
+  position: absolute;
+  inset: -60px;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, #000 35%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .trans-container {
@@ -23,19 +39,20 @@
   font-family: var(--font-mono, monospace);
   font-size: 12px;
   letter-spacing: 0.15em;
-  color: #3e4147;
-  font-weight: 600;
-  margin-bottom: 14px;
+  color: #444444;
+  font-weight: 700;
+  margin-bottom: 16px;
   display: block;
 }
 
 .trans-headline {
-  font-family: var(--font-hero, sans-serif);
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  font-weight: 600;
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   text-transform: uppercase;
-  color: #0f1012;
+  color: #000000;
   margin-bottom: 40px;
 }
 
@@ -43,22 +60,17 @@
 .trans-comparison-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 28px;
   margin-bottom: 44px;
 }
 
 .trans-col {
   padding: 40px 36px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-/* Before Side */
-.trans-col.before {
-  background: rgba(235, 230, 230, 0.7);
-  border-left: 4px solid #b91c1c;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .trans-col-header {
@@ -73,60 +85,95 @@
   font-size: 12px;
   letter-spacing: 0.15em;
   font-weight: 700;
-  padding: 4px 10px;
-}
-
-.trans-col.before .trans-col-badge {
-  background: #fef2f2;
-  color: #b91c1c;
+  padding: 5px 12px;
+  border-radius: 3px;
 }
 
 .trans-state-title {
-  font-family: var(--font-hero, sans-serif);
-  font-size: 32px;
-  letter-spacing: 0.02em;
-  margin-bottom: 16px;
-  color: #111;
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 
 .trans-state-keywords {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .trans-keyword-pill {
   font-family: var(--font-mono, monospace);
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   padding: 6px 12px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.trans-col.before .trans-keyword-pill {
-  color: #7f1d1d;
-  background: rgba(254, 226, 226, 0.5);
-  border-color: rgba(185, 28, 28, 0.2);
+  border-radius: 3px;
+  transition: all 0.2s ease;
 }
 
 .trans-state-desc {
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
   font-size: 15.5px;
   line-height: 1.6;
-  color: #3b3b3b;
+  font-weight: 500;
+  letter-spacing: -0.005em;
 }
 
-/* After Side */
-.trans-col.after {
-  background: #111111;
+/* Before Side (White Card) */
+.trans-col.before {
+  background: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.trans-col.before:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.trans-col.before .trans-col-badge {
+  background: #000000;
   color: #ffffff;
-  border-left: 4px solid #c2e600;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+}
+
+.trans-col.before .trans-state-title {
+  color: #000000;
+}
+
+.trans-col.before .trans-keyword-pill {
+  color: #000000;
+  background: #f5f5f5;
+  border: 1.5px solid #000000;
+  font-weight: 600;
+}
+
+.trans-col.before .trans-state-desc {
+  color: #111111;
+}
+
+/* After Side (Black Card) */
+.trans-col.after {
+  background: #000000;
+  border: 2px solid #000000;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+.trans-col.after:hover {
+  background: #0a0a0a;
+  border-color: #333333;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
 }
 
 .trans-col.after .trans-col-badge {
-  background: #c2e600;
-  color: black;
+  background: #ffffff;
+  color: #000000;
 }
 
 .trans-col.after .trans-state-title {
@@ -134,40 +181,52 @@
 }
 
 .trans-col.after .trans-keyword-pill {
-  color: black;
-  background: #c2e600;
-  border-color: #c2e600;
+  color: #000000;
+  background: #ffffff;
+  border: 1.5px solid #ffffff;
+  font-weight: 700;
 }
 
 .trans-col.after .trans-state-desc {
-  color: #e5e5e5;
+  color: #ffffff;
 }
 
 /* Famous Quote Banner */
 .trans-quote-card {
-  background: #1e2025;
+  background: #000000;
   color: #ffffff;
-  border: 1px solid #33363e;
-  padding: 36px 40px;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  padding: 40px 44px;
   text-align: center;
   position: relative;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trans-quote-card:hover {
+  background: #0a0a0a;
+  border-color: #333333;
 }
 
 .trans-quote-text {
-  font-family: var(--font-hero, sans-serif);
-  font-size: clamp(1.6rem, 3.2vw, 2.8rem);
+  font-family: var(--font-clash, 'Clash Display Variable', 'Clash Display', sans-serif);
+  font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+  font-weight: 600;
   letter-spacing: 0.01em;
-  line-height: 1.25;
-  color: #f5f5f5;
+  line-height: 1.3;
+  color: #ffffff;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .trans-quote-author {
   font-family: var(--font-mono, monospace);
   font-size: 12px;
   letter-spacing: 0.15em;
-  color: #888;
-  margin-top: 14px;
+  color: #888888;
+  font-weight: 600;
+  margin-top: 16px;
   display: block;
 }
 
@@ -184,5 +243,9 @@
 
   .trans-col {
     padding: 28px 24px;
+  }
+
+  .trans-quote-card {
+    padding: 28px 22px;
   }
 }

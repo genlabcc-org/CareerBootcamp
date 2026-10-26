@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Hero from './hero';
 import Problem from './problem';
 import WhyJoin from './whyJoin';
-import Agenda from './agenda';
 import TargetAudience from './targetAudience';
 import Transformation from './transformation';
 import EventDetails from './eventDetails';
@@ -27,10 +26,7 @@ export default function App() {
       {/* 02. Why Should You Join? */}
       <WhyJoin />
 
-      {/* 03. What You'll Get (Your Day at a Glance) */}
-      <Agenda />
-
-      {/* 04. This Day Is For You If... */}
+      {/* 03. This Day Is For You If... */}
       <TargetAudience />
 
       {/* 05. What Changes After This Day? (Transformation) */}

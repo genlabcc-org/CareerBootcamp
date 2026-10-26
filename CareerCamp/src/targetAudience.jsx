@@ -35,7 +35,7 @@ export default function TargetAudience() {
   return (
     <section className="audience-section" id="target-audience" aria-label="Who This Day Is For">
       <div className="audience-container">
-        <span className="audience-tag">// 04. TARGET FIT & AUDIENCE</span>
+        <span className="audience-tag">// 03. TARGET FIT & AUDIENCE</span>
 
         <h2 className="audience-headline">THIS DAY IS FOR YOU IF...</h2>
 

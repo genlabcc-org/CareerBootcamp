@@ -8,7 +8,7 @@ export default function Transformation() {
   return (
     <section className="trans-section" id="transformation" aria-label="Transformation: Before vs After">
       <div className="trans-container">
-        <span className="trans-tag">// 05. THE 1-DAY TRANSFORMATION</span>
+        <span className="trans-tag">// 04. THE 1-DAY TRANSFORMATION</span>
 
         <h2 className="trans-headline">WHAT CHANGES AFTER THIS DAY?</h2>
 
