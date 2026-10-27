@@ -22,7 +22,7 @@ export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
           aria-label="Close poster view"
           onClick={onClose}
         >
-          ✕
+          ✕ 
         </button>
 
         <div className="poster-modal-graphic-wrap">

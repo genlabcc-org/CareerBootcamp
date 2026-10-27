@@ -116,9 +116,7 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
               <li>
                 <span className="details-perk-text">✔ Free Resume Review</span>
               </li>
-              <li>
-                <span className="details-perk-text">✔ Certificate of Attendance</span>
-              </li>
+              
               <li>
                 <span className="details-perk-text">✔ Mentor Access</span>
               </li>
