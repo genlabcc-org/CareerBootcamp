@@ -330,7 +330,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
         {/* Modal Header */}
         <div className="reg-modal-header">
           <div>
-            <span className="reg-modal-tag">// ADMISSION: 100% FREE • VERIFIED ENTRY PASS</span>
+            <span className="reg-modal-tag">ADMISSION: 100% FREE • VERIFIED ENTRY PASS</span>
             <h2 className="reg-modal-title">
               {confirmedData ? 'PASS ISSUED' : 'RESERVE YOUR SEAT'}
             </h2>
@@ -419,6 +419,25 @@ export default function RegistrationModal({ isOpen, onClose }) {
                     {errors.phoneNumber && <span className="reg-error-msg">{errors.phoneNumber}</span>}
                   </div>
 
+                  {/* College Name */}
+                  <div className="reg-field-group">
+                    <label htmlFor="field-collegeName" className="reg-field-label reg-field-required">
+                      College Name
+                    </label>
+                    <input
+                      id="field-collegeName"
+                      name="collegeName"
+                      type="text"
+                      placeholder="e.g. PSG College of Technology"
+                      value={formData.collegeName}
+                      onChange={handleChange}
+                      className={`reg-field-input ${errors.collegeName ? 'has-error' : ''}`}
+                      disabled={isSubmitting}
+                      autoComplete="organization"
+                    />
+                    {errors.collegeName && <span className="reg-error-msg">{errors.collegeName}</span>}
+                  </div>
+
                   {/* Year of Pass Out (Dropdown with Others option) */}
                   <div className="reg-field-group">
                     <label htmlFor="field-passOutYear" className="reg-field-label reg-field-required">
@@ -458,7 +477,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
                   </div>
 
                   {/* Domain (Dropdown with Others option) */}
-                  <div className="reg-field-group-full">
+                  <div className="reg-field-group">
                     <label htmlFor="field-domain" className="reg-field-label reg-field-required">
                       Domain
                     </label>

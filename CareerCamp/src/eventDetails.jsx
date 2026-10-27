@@ -20,31 +20,7 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
             {/* Circular Social Buttons matching the reference image */}
             <div className="details-socials-row" aria-label="Social Links">
               <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noreferrer"
-                className="details-social-circle"
-                aria-label="YouTube"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-              </a>
-
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="details-social-circle"
-                aria-label="X (Twitter)"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-
-              <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/genlab.cc/"
                 target="_blank"
                 rel="noreferrer"
                 className="details-social-circle"
@@ -56,7 +32,19 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://wa.me/"
+                target="_blank"
+                rel="noreferrer"
+                className="details-social-circle"
+                aria-label="WhatsApp"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17.472 14.382c-.301-.15-1.781-.879-2.057-.979-.275-.1-.475-.15-.675.15-.2.3-.775.979-.95 1.179-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.489-.893-.796-1.496-1.78-1.671-2.08-.175-.3-.019-.462.13-.611.136-.134.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.584-.492-.505-.675-.514-.175-.009-.375-.009-.575-.009-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.2 2.115 3.23 5.124 4.53 3.009 1.3 3.009.867 3.559.813.55-.053 1.781-.727 2.031-1.43.25-.703.25-1.306.175-1.43-.075-.125-.275-.2-.575-.35zm-5.452 7.618h-.005a10.024 10.024 0 0 1-5.114-1.396l-.367-.218-3.805.998 1.016-3.71-.239-.38a10.007 10.007 0 0 1-1.536-5.29c0-5.524 4.494-10.017 10.023-10.017 2.677 0 5.193 1.043 7.086 2.937a9.96 9.96 0 0 1 2.932 7.08c0 5.524-4.494 10.017-10.025 10.017zm8.508-18.525C18.27 1.218 15.27 0 12.02 0 5.438 0 .08 5.358.077 11.942a11.9 11.9 0 0 0 1.83 6.324L0 24l5.88-1.543a11.895 11.895 0 0 0 6.136 1.696h.005c6.582 0 11.94-5.358 11.943-11.943 0-3.19-1.242-6.19-3.486-8.435z"/>
+                </svg>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/genlabcc"
                 target="_blank"
                 rel="noreferrer"
                 className="details-social-circle"
@@ -177,7 +165,7 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
         {/* Sub-Footer Bar */}
         <div className="details-subfooter-bar">
           <div className="details-subfooter-left">
-            <span>GENLAB LAUNCHPAD // WHERE CAREERS TAKE OFF.</span>
+            <span>GENLAB LAUNCHPAD • WHERE CAREERS TAKE OFF.</span>
           </div>
           <div className="details-subfooter-right">
             <span>© 2026 GENLAB FOUNDATION. ALL RIGHTS RESERVED.</span>

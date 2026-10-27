@@ -61,7 +61,7 @@ export default function Problem({ onOpenRegister }) {
 
       <div className="gap-container">
         <span className="gap-tag reveal" data-reveal>
-          // 01. THE HARSH REALITY
+          01. THE HARSH REALITY
         </span>
 
         <h2 className="gap-main-headline" data-reveal aria-label="We know how this feels.">

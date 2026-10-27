@@ -8,7 +8,7 @@ export default function Transformation() {
   return (
     <section className="trans-section" id="transformation" aria-label="Transformation: Before vs After">
       <div className="trans-container">
-        <span className="trans-tag">// 04. THE 1-DAY TRANSFORMATION</span>
+        <span className="trans-tag">04. THE 1-DAY TRANSFORMATION</span>
 
         <h2 className="trans-headline">WHAT CHANGES AFTER THIS DAY?</h2>
 
@@ -17,7 +17,7 @@ export default function Transformation() {
           <div className="trans-col before">
             <div>
               <div className="trans-col-header">
-                <span className="trans-col-badge">STATUS // BEFORE</span>
+                <span className="trans-col-badge">STATUS • BEFORE</span>
                 <span style={{ fontSize: '18px' }} aria-hidden="true"></span>
               </div>
 
@@ -41,7 +41,7 @@ export default function Transformation() {
           <div className="trans-col after">
             <div>
               <div className="trans-col-header">
-                <span className="trans-col-badge">STATUS // AFTER</span>
+                <span className="trans-col-badge">STATUS • AFTER</span>
                 <span style={{ fontSize: '18px' }} aria-hidden="true"></span>
               </div>
 
@@ -68,7 +68,7 @@ export default function Transformation() {
             "One day won't solve everything. But it can change the direction of
             everything."
           </blockquote>
-          <cite className="trans-quote-author">// GENLAB LAUNCHPAD PRINCIPLE</cite>
+          <cite className="trans-quote-author">GENLAB LAUNCHPAD PRINCIPLE</cite>
         </div>
       </div>
     </section>

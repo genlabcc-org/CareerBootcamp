@@ -41,7 +41,7 @@ export default function WhyJoin() {
   return (
     <section className="why-section" id="why-join" aria-label="Why Should You Join">
       <div className="why-container">
-        <span className="why-tag">// 02. VALUE PROPOSITION</span>
+        <span className="why-tag">02. VALUE PROPOSITION</span>
 
         <h2 className="why-headline">WHY SHOULD YOU JOIN?</h2>
 
@@ -58,7 +58,7 @@ export default function WhyJoin() {
             >
               <div>
                 <div className="why-card-header">
-                  <span className="why-card-badge">REASON // {item.num}</span>
+                  <span className="why-card-badge">REASON {item.num}</span>
                   {/* <span className="why-card-icon" aria-hidden="true">✔</span> */}
                 </div>
                 <h3 className="why-card-title">{item.title}</h3>

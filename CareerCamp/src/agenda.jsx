@@ -56,7 +56,7 @@ export default function Agenda() {
   return (
     <section className="agenda-section" id="agenda" aria-label="What You'll Get">
       <div className="agenda-container">
-        <span className="agenda-tag">// 03. FULL SYLLABUS & TIMELINE</span>
+        <span className="agenda-tag">03. FULL SYLLABUS & TIMELINE</span>
 
         <h2 className="agenda-headline">YOUR DAY AT A GLANCE.</h2>
 
@@ -75,7 +75,7 @@ export default function Agenda() {
 
           {sessions.map((item) => (
             <div key={item.num} className="agenda-row">
-              <div className="agenda-index">{item.num} //</div>
+              <div className="agenda-index">{item.num}</div>
               <div className="agenda-session-title">{item.title}</div>
               <div className="agenda-takeaway">{item.takeaway}</div>
             </div>
@@ -84,7 +84,7 @@ export default function Agenda() {
 
         {/* Plus Perks Bar */}
         <div className="agenda-perks-wrap">
-          <span className="agenda-perks-title">PLUS SPECIAL PROGRAM PERKS //</span>
+          <span className="agenda-perks-title">PLUS SPECIAL PROGRAM PERKS</span>
           <div className="agenda-perks-grid">
             {perks.map((perk, idx) => (
               <div key={idx} className="agenda-perk-item">

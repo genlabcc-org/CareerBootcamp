@@ -71,6 +71,11 @@ export function validateRegistrationForm(formData) {
     errors.phoneNumber = "Please enter a valid phone number (at least 10 digits).";
   }
 
+  // College Name
+  if (!formData.collegeName || formData.collegeName.trim().length < 2) {
+    errors.collegeName = "Please enter your college or institution name.";
+  }
+
   // Pass Out Year (Dropdown with Others)
   const passYear = (formData.passOutYear || "").toString().trim();
   if (!passYear || passYear === "Others") {
