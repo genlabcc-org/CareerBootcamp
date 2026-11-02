@@ -1,5 +1,6 @@
 import React from 'react';
 import './posterModal.css';
+import { REGISTRATION_OPEN } from './lib/registrationStatus';
 
 /**
  * Event Poster Modal Component
@@ -43,7 +44,7 @@ export default function PosterModal({ isOpen, onClose, onOpenRegister }) {
               onOpenRegister();
             }}
           >
-            Register Now
+            {REGISTRATION_OPEN ? 'Register Now' : 'Registration Closed'}
           </button>
         </div>
       </div>

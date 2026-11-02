@@ -2,6 +2,7 @@
 import { supabase, isSupabaseConfigured } from "./supabase.js";
 import { normalizeEmail, normalizePhone, validateRegistrationForm } from "./validators.js";
 import { syncRegistrationToSheet, syncAttendanceToSheet } from "./googleSheets.js";
+import { REGISTRATION_OPEN } from "./registrationStatus.js";
 
 const memoryStore = {};
 function getStore() {
@@ -97,6 +98,12 @@ initializeLocalStorage();
  * Register Participant API
  */
 export async function registerParticipant(formData) {
+  if (!REGISTRATION_OPEN) {
+    const error = new Error("Registration is currently closed.");
+    error.code = "REGISTRATION_CLOSED";
+    throw error;
+  }
+
   // Client-side pre-validation
   const { isValid, errors } = validateRegistrationForm(formData);
   if (!isValid) {

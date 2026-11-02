@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './hero.css';
+import { REGISTRATION_OPEN } from './lib/registrationStatus';
 
 /**
  * GenLab Official Website Logo
@@ -242,7 +243,7 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
                   className="launchpad-register-btn"
                   onClick={onOpenRegister}
                 >
-                  Register Now!
+                  {REGISTRATION_OPEN ? 'Register Now!' : 'Registration Closed'}
                 </button>
               </div>
             </div>
@@ -270,9 +271,9 @@ export default function Hero({ onOpenRegister, onOpenPoster }) {
           type="button"
           className="launchpad-mobile-floating-btn"
           onClick={onOpenRegister}
-          aria-label="Register Now for Launchpad"
+          aria-label={REGISTRATION_OPEN ? 'Register Now for Launchpad' : 'Registration Closed for Launchpad'}
         >
-          <span>Register Now!</span>
+          <span>{REGISTRATION_OPEN ? 'Register Now!' : 'Registration Closed'}</span>
           <span className="launchpad-floating-arrow" aria-hidden="true">→</span>
         </button>
       </div>

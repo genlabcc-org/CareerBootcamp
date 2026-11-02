@@ -139,6 +139,19 @@
   color: #ffffff;
 }
 
+.reg-closed-notice {
+  padding: 18px 20px;
+  background: rgba(212, 255, 50, 0.06);
+  border: 1px solid rgba(212, 255, 50, 0.24);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.reg-closed-notice p + p {
+  margin-top: 12px;
+}
+
 /* Duplicate / Global Alert */
 .reg-duplicate-alert {
   padding: 14px 18px;

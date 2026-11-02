@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import './problem.css';
+import { REGISTRATION_OPEN } from './lib/registrationStatus';
 
 /**
  * Adds `is-visible` to every [data-reveal] element as it scrolls into view.
@@ -96,7 +97,7 @@ export default function Problem({ onOpenRegister }) {
             className="gap-badge-btn"
             onClick={onOpenRegister}
           >
-            Claim Your Spot <span className="gap-arrow">→</span>
+            {REGISTRATION_OPEN ? 'Claim Your Spot' : 'Registration Closed'} <span className="gap-arrow">→</span>
           </button>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './eventDetails.css';
+import { REGISTRATION_OPEN } from './lib/registrationStatus';
 
 /**
  * Section 6 & 7: Event Details & Footer
@@ -140,9 +141,9 @@ export default function EventDetails({ onOpenRegister, onOpenPoster }) {
               type="button"
               className="details-pill-btn"
               onClick={onOpenRegister}
-              aria-label="Register Now"
+              aria-label={REGISTRATION_OPEN ? 'Register Now' : 'Registration Closed'}
             >
-              <span>Register Now</span>
+              <span>{REGISTRATION_OPEN ? 'Register Now' : 'Registration Closed'}</span>
               <span className="details-pill-arrow" aria-hidden="true">↗</span>
             </button>
             <span className="details-pill-note">

@@ -8,6 +8,7 @@ import {
 } from './lib/validators';
 import { registerParticipant } from './lib/api';
 import { downloadTicket } from './lib/ticketGenerator';
+import { REGISTRATION_OPEN } from './lib/registrationStatus';
 
 /**
  * Registration Modal Component
@@ -332,7 +333,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
           <div>
             <span className="reg-modal-tag">ADMISSION: 100% FREE • VERIFIED ENTRY PASS</span>
             <h2 className="reg-modal-title">
-              {confirmedData ? 'PASS ISSUED' : 'RESERVE YOUR SEAT'}
+              {confirmedData ? 'PASS ISSUED' : REGISTRATION_OPEN ? 'RESERVE YOUR SEAT' : 'REGISTRATION CLOSED'}
             </h2>
           </div>
           <button
@@ -347,7 +348,15 @@ export default function RegistrationModal({ isOpen, onClose }) {
 
         {/* Modal Body */}
         <div className="reg-modal-body">
-          {!confirmedData ? (
+          {!confirmedData && !REGISTRATION_OPEN ? (
+            <div className="reg-closed-notice" role="status">
+              <p>
+                Registration for Career Launchpad 2026 is currently closed, so we
+                can’t accept new registrations at this time.
+              </p>
+              <p>If you already registered, your existing registration is not affected.</p>
+            </div>
+          ) : !confirmedData ? (
             <>
               <p className="reg-modal-subtitle">
                 Fill in your details below to secure your seat for <strong>Career Launchpad 2026</strong>.
